@@ -1,0 +1,651 @@
+<script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useI18n } from "../i18n";
+
+const menuOpen = ref(false);
+const isMobile = ref(false);
+const { locale, setLocale, t } = useI18n();
+const isEn = computed(() => locale.value === "zh");
+
+// 吸顶相关状态
+const isSticky = ref(false);
+const lastScrollY = ref(0);
+const isHidden = ref(false);
+
+// 检测屏幕尺寸
+const checkScreenSize = () => {
+  isMobile.value = window.innerWidth < 960;
+};
+
+function toggleMenu() {
+  menuOpen.value = !menuOpen.value;
+}
+
+function toggleLang() {
+  setLocale(isEn.value ? "en" : "zh");
+}
+
+// 关闭移动端菜单
+const closeMobileMenu = () => {
+  menuOpen.value = false;
+};
+
+// 点击菜单项后关闭菜单
+const handleMenuItemClick = () => {
+  if (isMobile.value) {
+    closeMobileMenu();
+  }
+};
+
+// 滚动处理函数
+const handleScroll = () => {
+  const scrollTop =
+    window.pageYOffset ||
+    document.documentElement.scrollTop ||
+    document.body.scrollTop;
+
+  // 向下滚动且超过一定距离时隐藏导航栏
+  if (scrollTop > lastScrollY.value && scrollTop > 100) {
+    isHidden.value = true;
+    isSticky.value = false;
+  }
+  // 向上滚动时显示并固定导航栏
+  else if (scrollTop < lastScrollY.value && scrollTop > 78) {
+    isHidden.value = false;
+    isSticky.value = true;
+  }
+  // 滚动到顶部时恢复初始状态
+  else if (scrollTop <= 78) {
+    isHidden.value = false;
+    isSticky.value = false;
+  }
+
+  lastScrollY.value = scrollTop;
+};
+
+// 生命周期
+onMounted(() => {
+  checkScreenSize();
+  window.addEventListener("resize", checkScreenSize);
+  // 添加滚动监听
+  window.addEventListener("scroll", handleScroll, { passive: true });
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkScreenSize);
+  // 移除滚动监听
+  window.removeEventListener("scroll", handleScroll);
+});
+</script>
+
+<template>
+  <nav
+    class="navbar"
+    :class="{ 'navbar-sticky': isSticky, 'navbar-hidden': isHidden }"
+  >
+    <div v-if="isMobile" class="brand">
+      <img class="logo" src="../assets/WebX-logo.svg" alt="Logo" />
+    </div>
+    <div class="container">
+      <!-- 移动端汉堡按钮 - 只在移动端显示 -->
+      <div v-if="isMobile" class="mobile" @click="toggleMenu">
+        <div class="hamburger" :class="{ active: menuOpen }">
+          <img src="../assets/lang_m.svg" alt="" />
+        </div>
+      </div>
+      <div v-if="!isMobile" class="brand">
+        <img class="logo" src="../assets/WebX-logo.svg" alt="Logo" />
+      </div>
+
+      <!-- 桌面端导航菜单 -->
+      <ul v-if="!isMobile" class="links">
+        <li>
+          <a href="#overview" @click="handleMenuItemClick">{{
+            t("nav.項目簡介")
+          }}</a>
+        </li>
+        <li>
+          <a href="#docs" @click="handleMenuItemClick">{{
+            t("nav.項目優勢")
+          }}</a>
+        </li>
+        <li>
+          <a href="#team" @click="handleMenuItemClick">{{
+            t("nav.生態系統")
+          }}</a>
+        </li>
+        <li>
+          <a href="#sponsors" @click="handleMenuItemClick">{{
+            t("nav.團隊背景")
+          }}</a>
+        </li>
+        <li>
+          <a href="#contact" @click="handleMenuItemClick">{{
+            t("nav.聯係我們")
+          }}</a>
+        </li>
+      </ul>
+
+      <div class="actions">
+        <button class="lang-switch" @click="toggleLang">
+          <span class="globe">
+            <img src="../assets/lang.svg" alt="语言" />
+          </span>
+          <span class="text">{{ isEn ? "EN" : "中" }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 移动端全屏下拉菜单 -->
+    <transition name="slide-fade">
+      <div
+        v-if="isMobile && menuOpen"
+        class="mobile-menu-fullscreen"
+        @click="closeMobileMenu"
+      >
+        <div class="mobile-menu-content" @click.stop>
+          <div class="menu-header">
+            <div class="brand-mobile">
+              <img
+                class="logo-mobile"
+                src="../assets/WebX-logo.svg"
+                alt="Logo"
+              />
+            </div>
+            <div class="menu-close" @click="closeMobileMenu">
+              <span class="close-icon">×</span>
+            </div>
+          </div>
+
+          <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+              <a
+                href="#overview"
+                @click="handleMenuItemClick"
+                class="menu-link"
+              >
+                <span class="menu-icon">📋</span>
+                <span class="menu-text">{{ t("nav.項目簡介") }}</span>
+              </a>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#docs" @click="handleMenuItemClick" class="menu-link">
+                <span class="menu-icon">⭐</span>
+                <span class="menu-text">{{ t("nav.項目優勢") }}</span>
+              </a>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#team" @click="handleMenuItemClick" class="menu-link">
+                <span class="menu-icon">🌐</span>
+                <span class="menu-text">{{ t("nav.生態系統") }}</span>
+              </a>
+            </li>
+            <li class="mobile-menu-item">
+              <a
+                href="#sponsors"
+                @click="handleMenuItemClick"
+                class="menu-link"
+              >
+                <span class="menu-icon">👥</span>
+                <span class="menu-text">{{ t("nav.團隊背景") }}</span>
+              </a>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#contact" @click="handleMenuItemClick" class="menu-link">
+                <span class="menu-icon">📞</span>
+                <span class="menu-text">{{ t("nav.聯係我們") }}</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="menu-footer">
+            <div class="language-switch-mobile">
+              <button class="lang-btn-mobile" @click="toggleLang">
+                <span class="lang-text">{{ isEn ? "English" : "中文" }}</span>
+                <span class="lang-arrow">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </nav>
+</template>
+
+<style scoped lang="scss">
+html,
+body {
+  height: 100%;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+}
+/* 吸顶状态样式 */
+.navbar-sticky {
+  position: fixed;
+  top: 0;
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease;
+}
+
+/* 隐藏状态样式 */
+.navbar-hidden {
+  transform: translateY(-100%);
+  box-shadow: none;
+}
+
+/* 下滑动画 */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 24px;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 122px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: clamp(32px, 5vw, 120px);
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.links a {
+  text-decoration: none;
+  // 不允许换行
+  white-space: nowrap;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.links a:hover,
+.links a.router-link-active {
+  color: var(--color-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .text {
+    color: var(--color-bg);
+  }
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  max-width: 100px;
+  width: 120px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  background: var(--color-primary);
+}
+
+.lang-switch:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.globe {
+  font-size: 16px;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* 汉堡按钮样式 */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-text);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* 移动端全屏菜单样式 */
+.mobile-menu-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-content {
+  width: 90%;
+  max-width: 400px;
+  height: 80%;
+  max-height: 600px;
+  background: var(--color-bg);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand-mobile .logo-mobile {
+  width: 100px;
+  height: 24px;
+}
+
+.menu-close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background: var(--color-gray);
+  transition: all 0.3s ease;
+}
+
+.menu-close:hover {
+  background: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.close-icon {
+  font-size: 24px;
+  color: var(--color-text);
+}
+
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mobile-menu-item {
+  margin: 0 20px 10px;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: var(--color-text);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.menu-link:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateX(5px);
+}
+
+.menu-icon {
+  font-size: 20px;
+  margin-right: 15px;
+  width: 24px;
+  text-align: center;
+}
+
+.menu-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu-footer {
+  padding: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.lang-btn-mobile {
+  width: 100%;
+  padding: 12px 20px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.lang-btn-mobile:hover {
+  transform: translateY(-2px);
+}
+
+/* 动画效果 */
+.slide-fade-enter-active {
+  animation: slide-fade-in 0.4s ease;
+}
+
+.slide-fade-leave-active {
+  animation: slide-fade-out 0.3s ease;
+}
+
+@keyframes slide-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 960px) {
+  .logo {
+    width: 78px;
+    height: 42px;
+  }
+
+  .container {
+    padding: 0 24px;
+    justify-content: flex-start;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .lang-switch {
+    padding: 6px 10px;
+    gap: 6px;
+    margin-left: auto;
+  }
+
+  .brand {
+    // margin: 0 auto;
+    position: static;
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    height: 56px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 78px;
+    height: 42px;
+  }
+
+  .lang-switch {
+    padding: 3px 6px;
+    width: 100px;
+  }
+
+  .mobile-menu-content {
+    width: 95%;
+    height: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    position: relative; /* 相对定位的父容器 */
+    .brand img {
+      position: absolute; /* 绝对定位的图片 */
+      left: 50%; /* 向左偏移50% */
+      transform: translate(
+        -50%,
+        65%
+      ); /* 向上和向左偏移自身宽高的50%，实现完全居中 */
+    }
+  }
+
+  .globe {
+    font-size: 14px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .container {
+    padding: 0 16px;
+  }
+
+  .lang-switch {
+    width: 60px;
+
+    .text {
+      font-size: 12px;
+    }
+  }
+
+  .menu-link {
+    padding: 14px 16px;
+  }
+
+  .menu-icon {
+    margin-right: 12px;
+  }
+}
+
+/* 滚动条样式 */
+.mobile-menu-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-menu-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-menu-list::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+.mobile-menu-list::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+</style>
