@@ -42,7 +42,7 @@ const backgroundImageUrl = ref("");
 // 根据设备类型更新背景图
 const updateBackgroundImage = () => {
   backgroundImageUrl.value = isMobile.value
-    ? new URL("../../../assets/new/banner @2x.png", import.meta.url).href
+    ? new URL("../../../assets/new_m/banner2@2x.png", import.meta.url).href
     : new URL("../../../assets/new/banner @2x.png", import.meta.url).href;
 };
 
@@ -236,7 +236,6 @@ onUnmounted(() => {
   }
 
   .text-content {
-    order: 2; /* 文字内容在下 */
     justify-content: flex-start; /* 确保内容从顶部开始 */
   }
 
@@ -263,124 +262,98 @@ onUnmounted(() => {
     min-height: 100vh;
     padding-top: 60px;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
-    /* 确保容器不溢出 */
     overflow: hidden;
+    position: relative;
   }
 
   .container {
-    grid-template-columns: 1fr;
-    gap: 15px; /* 减少间隙 */
+    gap: 15px;
+    padding-top: 0 !important;
     text-align: center;
     position: static;
-    height: auto;
-    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    /* 关键修复：防止内容溢出 */
-    min-height: 0;
-    overflow: visible; /* 允许内容显示 */
+    overflow: visible;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    /* 使用Flexbox弹性布局确保内容分布合理 */
+    flex: 1;
   }
 
   .text-content {
-    order: 2;
-    padding: 0 5px; /* 减少内边距 */
+    padding: 0 5px;
     width: 100%;
-    flex: 1 1 auto;
     min-height: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* 内容靠底部 */
-  }
+    /* 关键修改：使用flex布局将按钮推到底部 */
+    flex: 1;
+    justify-content: space-between; /* 让内容均匀分布，按钮自然到底部 */
 
-  .visual-content {
-    order: 1;
-    max-height: 30vh; /* 减少视觉区域高度 */
-    flex: 0 0 auto;
-    min-height: 0;
+    h1 {
+      font-weight: bold;
+      font-size: 46px;
+      color: #000000;
+      line-height: 1.2;
+      padding-top: 59px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-size: 28px;
+      color: #000000;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      color: #808080;
+      width: 100%;
+      max-width: 240px;
+      margin: 0 auto 30px;
+      flex: 1; /* 让段落占据剩余空间，将按钮推到底部 */
+    }
   }
 
   .actions {
     display: flex;
-    gap: 8px;
-    flex-wrap: nowrap; /* 防止换行导致遮挡 */
+    gap: 12px;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    margin: 15px 0 10px;
-    padding: 10px 0;
+    margin: 20px 0 10px;
+    padding: 15px 0;
     position: relative;
     z-index: 10;
     flex-shrink: 0;
-    padding-bottom: 40px;
+    width: 100%;
+    /* 确保按钮在移动端始终可见 */
+    margin-top: auto; /* 关键属性：将按钮组推到容器底部 */
+    padding-bottom: 100px;
+    /* 按钮样式优化 */
+    .primary,
+    .ghost {
+      flex: 1;
+      min-width: 140px;
+      max-width: 200px;
+      position: relative;
+      z-index: 31;
+      opacity: 1 !important;
+      visibility: visible !important;
+      font-size: 18px;
+      padding: 12px 20px;
+      /* 添加底部边距确保不被遮挡 */
+      margin-bottom: env(safe-area-inset-bottom, 10px); /* 考虑iOS安全区域 */
+    }
+
     .ghost {
       background-color: #fff;
       border: var(--color-primary) solid 1px !important;
     }
-    /* 确保两个按钮都可见 */
-    .primary,
-    .ghost {
-      flex: 0 0 auto;
-      min-width: 140px;
-      position: relative;
-      z-index: 31;
-      opacity: 1 !important; /* 强制显示 */
-      visibility: visible !important; /* 强制可见 */
-      margin-top: auto; /* 将按钮组推到容器底部 */
-      z-index: -11;
-    }
-  }
-}
-
-/* 小屏手机适配 (小于480px) */
-@media (max-width: 479px) {
-  .hero {
-    padding: 10px 8px 15px;
-    padding-top: 56px; /* 小屏手机头部高度 */
-  }
-
-  .container {
-    min-height: calc(100vh - 206px);
-  }
-
-  .text-content h1 {
-    font-size: 24px;
-  }
-
-  .subtitle {
-    font-size: 13px;
-  }
-
-  .actions {
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .primary,
-  .ghost {
-    width: 100%;
-    max-width: 240px;
-  }
-}
-
-/* 超小屏手机适配 (小于360px) */
-@media (max-width: 359px) {
-  .hero {
-    padding-top: 50px;
-  }
-
-  .container {
-    min-height: calc(100vh - 50px);
-  }
-
-  .text-content h1 {
-    font-size: 22px;
-  }
-
-  .subtitle {
-    font-size: 12px;
   }
 }
 </style>
