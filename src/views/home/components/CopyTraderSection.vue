@@ -26,6 +26,11 @@
         </div>
       </div>
     </div>
+      <PartnerSection
+        :title="'合作伙伴'"
+        :section-index="7"
+        :is-mobile-device="isMobileDevice"
+      />
   </section>
 </template>
 
@@ -47,7 +52,8 @@ import litecoin from "../../../assets/litecoin.svg";
 import avalanche from "../../../assets/avalanche.svg";
 import compound from "../../../assets/compound.svg";
 import uniswap from "../../../assets/uniswap.svg";
-
+import PartnerSection from "./PartnerSection.vue";
+const isMobileDevice = ref(false);
 const tokens = [
   { label: "比特币", code: "BTC", icon: bitcoin },
   { label: "以太坊", code: "ETH", icon: ethereum },
@@ -266,7 +272,6 @@ onBeforeUnmount(() => {
   margin: 8px 0 16px;
 }
 
-
 .chips-wrapper {
   width: 100%;
   overflow: visible;
@@ -340,7 +345,6 @@ onBeforeUnmount(() => {
     font-size: 22px;
   }
 }
-
 
 @media (max-width: 768px) {
   .promo-dark {

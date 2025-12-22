@@ -23,7 +23,9 @@ export default defineConfig({
     postcss: {
       plugins: [
         postcssPxtorem({
-          rootValue: 16,
+          rootValue: (module) => {
+            return module.file?.includes("vant") ? 37.5 : 16;
+          },
           propList: ["*"],
           selectorBlackList: ["no-rem"],
           exclude: /node_modules/i,

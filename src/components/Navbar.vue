@@ -97,7 +97,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="navbar-placeholder"></div>
+  <!-- <div class="navbar-placeholder"></div> -->
 
   <nav
     class="navbar"
@@ -107,48 +107,10 @@ onUnmounted(() => {
       'navbar-blur': isSticky && !isAtTop,
     }"
   >
-    <div v-if="isMobile" class="brand">
-      <img class="logo" src="../assets/WebX-logo.svg" alt="Logo" />
-    </div>
     <div class="container">
-      <!-- 移动端汉堡按钮 - 只在移动端显示 -->
-      <div v-if="isMobile" class="mobile" @click="toggleMenu">
-        <div class="hamburger" :class="{ active: menuOpen }">
-          <img src="../assets/lang_m.svg" alt="" />
-        </div>
-      </div>
-      <div v-if="!isMobile" class="brand">
+      <div class="brand">
         <img class="logo" src="../assets/WebX-logo.svg" alt="Logo" />
       </div>
-
-      <!-- 桌面端导航菜单 -->
-      <ul v-if="!isMobile" class="links" :style="{ gap: linksGap }">
-        <li>
-          <a href="#overview" @click="handleMenuItemClick">{{
-            t("nav.項目簡介")
-          }}</a>
-        </li>
-        <li>
-          <a href="#docs" @click="handleMenuItemClick">{{
-            t("nav.項目優勢")
-          }}</a>
-        </li>
-        <li>
-          <a href="#team" @click="handleMenuItemClick">{{
-            t("nav.生態系統")
-          }}</a>
-        </li>
-        <li>
-          <a href="#sponsors" @click="handleMenuItemClick">{{
-            t("nav.團隊背景")
-          }}</a>
-        </li>
-        <li>
-          <a href="#contact" @click="handleMenuItemClick">{{
-            t("nav.聯係我們")
-          }}</a>
-        </li>
-      </ul>
 
       <div class="actions">
         <button class="lang-switch" @click="toggleLang">
@@ -159,80 +121,6 @@ onUnmounted(() => {
         </button>
       </div>
     </div>
-
-    <!-- 移动端全屏下拉菜单 -->
-    <transition name="slide-fade">
-      <div
-        v-if="isMobile && menuOpen"
-        class="mobile-menu-fullscreen"
-        @click="closeMobileMenu"
-      >
-        <div class="mobile-menu-content" @click.stop>
-          <div class="menu-header">
-            <div class="brand-mobile">
-              <img
-                class="logo-mobile"
-                src="../assets/WebX-logo.svg"
-                alt="Logo"
-              />
-            </div>
-            <div class="menu-close" @click="closeMobileMenu">
-              <span class="close-icon">×</span>
-            </div>
-          </div>
-
-          <ul class="mobile-menu-list">
-            <li class="mobile-menu-item">
-              <a
-                href="#overview"
-                @click="handleMenuItemClick"
-                class="menu-link"
-              >
-                <span class="menu-icon">📋</span>
-                <span class="menu-text">{{ t("nav.項目簡介") }}</span>
-              </a>
-            </li>
-            <li class="mobile-menu-item">
-              <a href="#docs" @click="handleMenuItemClick" class="menu-link">
-                <span class="menu-icon">⭐</span>
-                <span class="menu-text">{{ t("nav.項目優勢") }}</span>
-              </a>
-            </li>
-            <li class="mobile-menu-item">
-              <a href="#team" @click="handleMenuItemClick" class="menu-link">
-                <span class="menu-icon">🌐</span>
-                <span class="menu-text">{{ t("nav.生態系統") }}</span>
-              </a>
-            </li>
-            <li class="mobile-menu-item">
-              <a
-                href="#sponsors"
-                @click="handleMenuItemClick"
-                class="menu-link"
-              >
-                <span class="menu-icon">👥</span>
-                <span class="menu-text">{{ t("nav.團隊背景") }}</span>
-              </a>
-            </li>
-            <li class="mobile-menu-item">
-              <a href="#contact" @click="handleMenuItemClick" class="menu-link">
-                <span class="menu-icon">📞</span>
-                <span class="menu-text">{{ t("nav.聯係我們") }}</span>
-              </a>
-            </li>
-          </ul>
-
-          <div class="menu-footer">
-            <div class="language-switch-mobile">
-              <button class="lang-btn-mobile" @click="toggleLang">
-                <span class="lang-text">{{ isEn ? "English" : "中文" }}</span>
-                <span class="lang-arrow">↗</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </transition>
   </nav>
 </template>
 
@@ -670,12 +558,7 @@ body.menu-open {
 
 @media (max-width: 480px) {
   .navbar {
-    position: fixed;
-    .brand img {
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, 65%);
-    }
+   
   }
 
   .globe {

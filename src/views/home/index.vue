@@ -1,15 +1,11 @@
 <template>
   <div class="home">
     <HeroSection />
-    <EducationSection />
-    <SecondComponent />
-    <PromoBanner />
-    <InterestRateSection />
-    <AssetGridSection />
-    <CryptoBestStateSection />
+    <!-- 項目概况 -->
+    <ProjectOverview />
+    <!-- 新聞資訊 -->
+    <NewsInformation />
     <CopyTraderSection />
-    <PartnersSection />
-    <GlobalTrustSection />
     <DownloadAppsSection />
     <SponsorsSection />
   </div>
@@ -17,15 +13,9 @@
 
 <script setup>
 import HeroSection from "./components/HeroSection.vue";
-import SecondComponent from "./components/SecondComponent.vue";
-import PromoBanner from "./components/PromoBanner.vue";
-import InterestRateSection from "./components/InterestRateSection.vue";
-import AssetGridSection from "./components/AssetGridSection.vue";
-import CryptoBestStateSection from "./components/CryptoBestStateSection.vue";
+import ProjectOverview from "./components/ProjectOverview.vue";
+import NewsInformation from "./components/NewsInformation.vue";
 import CopyTraderSection from "./components/CopyTraderSection.vue";
-import EducationSection from "./components/EducationSection.vue";
-import PartnersSection from "./components/PartnersSection.vue";
-import GlobalTrustSection from "./components/GlobalTrustSection.vue";
 import SponsorsSection from "./components/SponsorsSection.vue";
 import DownloadAppsSection from "./components/DownloadAppsSection.vue";
 </script>

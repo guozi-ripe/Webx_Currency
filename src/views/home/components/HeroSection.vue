@@ -1,25 +1,20 @@
 <template>
-  <section
-    class="hero"
-    id="hero"
-    :style="{
-      backgroundImage: `url(${backgroundImageUrl})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-    }"
-  >
+  <section class="hero" id="hero">
+    <div
+      class="background-carousel"
+      :style="{
+        backgroundImage: `url(${backgroundImageUrl})`,
+      }"
+    ></div>
     <div class="container">
       <div class="text-content">
         <h1>{{ $t("hero.title") }}</h1>
+        <h3>{{ $t("hero.title2") }}</h3>
         <p class="subtitle">{{ $t("hero.sub") }}</p>
         <div class="actions">
           <button class="primary">{{ $t("hero.ctaPrimary") }}</button>
           <button class="ghost">{{ $t("hero.ctaSecondary") }}</button>
         </div>
-      </div>
-      <div class="visual-content">
-        <!-- 可以在这里放置图片或其他视觉元素 -->
       </div>
     </div>
   </section>
@@ -47,8 +42,8 @@ const backgroundImageUrl = ref("");
 // 根据设备类型更新背景图
 const updateBackgroundImage = () => {
   backgroundImageUrl.value = isMobile.value
-    ? new URL("../../../assets/banner1_1.png", import.meta.url).href
-    : new URL("../../../assets/banner02.png", import.meta.url).href;
+    ? new URL("../../../assets/new/banner @2x.png", import.meta.url).href
+    : new URL("../../../assets/new/banner @2x.png", import.meta.url).href;
 };
 
 // 防抖函数：确保频繁触发的事件不会导致性能问题[6,7](@ref)
@@ -98,27 +93,40 @@ onUnmounted(() => {
   padding: 20px 16px 30px;
   position: relative;
   color: #000;
-  min-height: 91vh;
+  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: center;
 
-  /* 减去固定头部高度 */
-  padding-top: 80px; /* 默认PC端头部高度 */
+  box-sizing: border-box;
+  padding-top: 0px; /* 默认PC端头部高度 */
+  .background-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* 确保背景在内容下层 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* 确保背景图固定，营造沉浸感（可选） */
+    background-attachment: fixed;
+  }
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  // background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25));
 }
 
 .container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  padding-top: 157px;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;
@@ -132,13 +140,24 @@ onUnmounted(() => {
   flex-direction: column;
   justify-content: center;
   height: 100%;
-
   h1 {
-    font-size: 48px;
     line-height: 1.2;
-    margin: 0 0 12px;
-    font-weight: 700;
-    color: #000;
+    margin: 0 0 28px;
+    font-weight: bold;
+    font-size: 80px;
+    color: #000000;
+    max-width: 600px;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 60px;
+    color: #000000;
+
+    margin-bottom: 39px;
+  }
+  p {
+    width: 507px;
+    margin-bottom: 88px;
   }
 }
 
@@ -157,14 +176,14 @@ onUnmounted(() => {
 }
 
 .primary {
-  background: #007bff;
-  color: #fff;
+  background: var(--color-primary);
+  font-weight: 400;
+  font-size: 24px;
+  color: #ffffff;
   border: none;
   border-radius: 6px;
   padding: 10px 18px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
   transition: all 0.3s ease;
 
   &:hover {
@@ -175,18 +194,18 @@ onUnmounted(() => {
 
 .ghost {
   background: transparent;
-  border: 2px solid #007bff;
+  border: 2px solid var(--color-primary);
   border-radius: 6px;
   padding: 10px 18px;
-  color: #007bff;
+  color: var(--color-primary);
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 24px;
   transition: all 0.3s ease;
 
   &:hover {
-    background: #007bff;
-    color: #333;
+    background: var(--color-primary);
+    color: #fff;
     transform: translateY(-2px);
   }
 }

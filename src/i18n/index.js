@@ -10,7 +10,8 @@ const messages = {
       聯係我們: "Contact Us",
     },
     hero: {
-      title: "The future of global chain commerce starts here",
+      title: "The future of global chain ",
+      title2: "commerce starts here",
       sub: "We follow openness, transparency and compliance to launch WEBX digital assets, empowering the construction and growth of the global chain-commerce ecosystem.",
       join: "Join WebX",
       ctaPrimary: "View token info",
@@ -332,7 +333,8 @@ const messages = {
       聯係我們: "聯係我們",
     },
     hero: {
-      title: "全球鏈商的未來從這裡啟程",
+      title: "全球鏈商的未來",
+      title2: "從這裡啟程",
       sub: "我們以開放、透明與合規為原則，推出 WEBX 數位資產，助力全球鏈商生態的建設與發展。",
       join: "加入 WebX",
       ctaPrimary: "查看代幣資訊",
@@ -411,54 +413,6 @@ const messages = {
       cta: "開始複製",
       return12m: "12 個月回報",
     },
-    education: {
-      title: "投資課程、博客和網絡研討會",
-      cta: "立即開始學習",
-      items: {
-        portfolio: "打造你的作品集",
-        stockBreakdown: "股票拆解",
-        stockStrategy: "股票投資策略",
-        technicalAnalysis: "技術分析",
-        cryptoIntro: "加密資產入門",
-      },
-    },
-    overview: {
-      title: "項目概況",
-      token: {
-        title: "1. 代幣資訊",
-        symbol: "幣符：WEBX",
-        cn: "中文全稱：全球鏈商",
-        en: "英文全稱：WebX Global Chain Commerce",
-        supply: "代幣發行量：21 億 (2,100,000,000)",
-      },
-      project: {
-        title: "項目基本情況",
-        compliance: "合規與透明：嚴格遵循所在法域的合規要求。",
-        tech: "技術基礎：以安全、可擴展的鏈上架構為核心。",
-        ecosystem: "生態走向：圍繞鏈商應用場景，逐步拓展合作。",
-      },
-      exchanges: {
-        title: "收錄的交易所",
-        cex: "計劃對接",
-      },
-      wallets: {
-        title: "錢包收錄",
-        plan: "計劃支持",
-        adapted: "已適配（測試）",
-        note: "以上名單將隨適配進度更新，以各平台公告為準。",
-      },
-      whitepaper: {
-        title: "白皮書下載",
-        desc: "白皮書正在整理與審閱，暫提供白皮書連結，正式版本發布後可直接下載。",
-        cta: "即將推出",
-      },
-    },
-    interest: {
-      title: "年利率最高可達 10%*",
-      sub: "採用“等級升+鎖詹耦放”機制，所有推廣者均為節點。",
-      join: "加入 WebX",
-      more: "了解更多資訊",
-    },
     promo: {
       title: "通往加密貨幣的門戶",
       desc: "獲取熱門加密資產，開啟投資未來之路。",
@@ -471,11 +425,6 @@ const messages = {
       title: "加密貨幣交易的核心功能",
       desc: "能量值具備“”與“制卡”兩大功能。功能允許用戶上傳能量值進行，直接獲取WebX代收益，實現消費價值向數字資產的轉化；制卡功能支持用戶直接將能量值製作成禮品卡，禮品卡可在生熊內流通、消費或轉贈他人，提升能量值的靈活性與實用性，豐富商生熊的支付場景；能量值不設有效期，可長期累，且隨著生熊發展，能量值的應用場景將持續拓展。",
       search: "搜尋加密貨幣",
-    },
-    download: {
-      title: "從商店下載我們的應用",
-      apple: "Apple 應用商店",
-      android: "安卓應用",
     },
     docs: {
       title: "項目文件與摘要",
