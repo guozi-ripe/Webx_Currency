@@ -26,11 +26,11 @@
         </div>
       </div>
     </div>
-      <PartnerSection
-        :title="'合作伙伴'"
-        :section-index="7"
-        :is-mobile-device="isMobileDevice"
-      />
+    <PartnerSection
+      :title="'合作伙伴'"
+      :section-index="7"
+      :is-mobile-device="isMobileDevice"
+    />
   </section>
 </template>
 
@@ -261,15 +261,15 @@ onBeforeUnmount(() => {
 }
 
 .heading {
-  color: var(--heading-color);
-  margin: 0;
-  font-size: var(--heading-size);
+  font-weight: bold;
+  font-size: 38px;
+  color: #343434;
 }
 
 .sub {
-  color: var(--heading-color);
-  font-size: var(--heading-size);
-  margin: 8px 0 16px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #343434;
 }
 
 .chips-wrapper {
@@ -340,16 +340,26 @@ onBeforeUnmount(() => {
   white-space: nowrap;
 }
 
-@media (max-width: 960px) {
-  .heading {
-    font-size: 22px;
-  }
-}
-
 @media (max-width: 768px) {
+  .promo-dark .inner .heading {
+    font-weight: bold;
+    font-size: 28px;
+    color: #343434;
+  }
+  .promo-dark .inner .sub {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #343434;
+  }
   .promo-dark {
-    padding: 48px 0;
+    padding: 48px 24px 0;
     color: #d1d5db;
+  }
+
+  .inner {
+    margin: 0 auto;
+    text-align: center;
   }
   .chips-wrapper {
     overflow: hidden;

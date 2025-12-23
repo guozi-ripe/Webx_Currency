@@ -5,8 +5,12 @@
     <ProjectOverview />
     <!-- 新聞資訊 -->
     <NewsInformation />
+    <!-- 加密货币 -->
     <CopyTraderSection />
+    <GlobalTrust />
+    <!-- 項目摘要 -->
     <DownloadAppsSection />
+    <!-- 團隊背景 -->
     <SponsorsSection />
   </div>
 </template>
@@ -16,6 +20,7 @@ import HeroSection from "./components/HeroSection.vue";
 import ProjectOverview from "./components/ProjectOverview.vue";
 import NewsInformation from "./components/NewsInformation.vue";
 import CopyTraderSection from "./components/CopyTraderSection.vue";
+import GlobalTrust from "./components/GlobalTrust.vue";
 import SponsorsSection from "./components/SponsorsSection.vue";
 import DownloadAppsSection from "./components/DownloadAppsSection.vue";
 </script>

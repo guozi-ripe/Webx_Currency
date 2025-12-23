@@ -202,6 +202,11 @@ onBeforeUnmount(() => {
 
 .title {
   margin: 0 0 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 38px;
+  color: #343434;
+  padding-bottom: 74px;
 }
 
 .panel {
@@ -376,6 +381,14 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 960px) {
+.title {
+  margin: 0 0 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: #343434;
+  padding-bottom: 34px;
+}
   .qr-grid {
     grid-template-columns: 1fr;
   }
@@ -384,19 +397,22 @@ onBeforeUnmount(() => {
     padding: 32px 16px;
   }
 
-.index {
-  font-weight: 500;
-  color: #333;
-  transition: color 0.3s ease;
-  text-align: left; 
-  text-indent: -2em; /* 首行悬挂缩进2字符 */
-  padding-left: 2em; /* 为悬挂缩进留出空间 */
-  box-sizing: border-box;
-  &.active-index {
+  .index {
     font-weight: 500;
-    color: #0A3C9F;
-    font-size: 10px;
+    color: #333;
+    transition: color 0.3s ease;
+    text-align: left;
+    text-indent: -2em;
+    /* 首行悬挂缩进2字符 */
+    padding-left: 2em;
+    /* 为悬挂缩进留出空间 */
+    box-sizing: border-box;
+
+    &.active-index {
+      font-weight: 500;
+      color: #0A3C9F;
+      font-size: 10px;
+    }
   }
-}
 }
 </style>

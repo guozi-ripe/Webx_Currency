@@ -1,16 +1,19 @@
 <template>
   <section class="sponsors" id="sponsors">
     <div class="container">
-      <h3>團隊背景</h3>
+      <h3>{{ t("nav.團隊背景") }}</h3>
       <div class="carousel">
         <div class="track" ref="track">
           <div v-for="(page, i) in pages" :key="i" class="slide">
             <div class="row">
               <div v-for="(item, j) in page" :key="j" class="logo-card">
+                <div class="title">
+                  <div class="desc">{{ item.desc }}</div>
+                  <div>{{ item.title }}</div>
+                </div>
                 <div class="cover">
                   <img :src="item.src" :alt="item.title" />
                 </div>
-                <div class="title">{{ item.title }}</div>
               </div>
             </div>
           </div>
@@ -29,28 +32,25 @@
 </template>
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
-import airbnb from "../../../assets/airbnb.svg";
-import apple from "../../../assets/apple-colored.svg";
-import netflix from "../../../assets/netflix.svg";
-import spdr from "../../../assets/spdr-colored.svg";
-import ishares from "../../../assets/ishares-colored.svg";
-import webull from "../../../assets/webullglobal.svg";
-import vueLogo from "../../../assets/vue.svg";
-import ethereum from "../../../assets/ethereum.svg";
-import polygon from "../../../assets/polygon.svg";
-import chainlink from "../../../assets/chainlink.svg";
+import java from "../../../assets/test2.webp";
+import web from "../../../assets/test3.webp";
+import php from "../../../assets/test4.webp";
+import uniapp from "../../../assets/test5.webp";
+import python from "../../../assets/test6.webp";
+import { useI18n } from "../../../i18n";
 
-const logos: { src: string; title: string }[] = [
-  { src: airbnb, title: "Airbnb" },
-  { src: apple, title: "Apple" },
-  { src: netflix, title: "Netflix" },
-  { src: spdr, title: "SPDR" },
-  { src: ishares, title: "iShares" },
-  { src: webull, title: "Webull" },
-  { src: vueLogo, title: "Vue" },
-  { src: ethereum, title: "Ethereum" },
-  { src: polygon, title: "Polygon" },
-  { src: chainlink, title: "Chainlink" },
+const { t } = useI18n();
+const logos: { src: string; title: string; desc: string }[] = [
+  { src: java, title: "java", desc: "專業的Java開發者" },
+  { src: web, title: "web", desc: "專業的Web開發者" },
+  { src: uniapp, title: "uniapp", desc: "專業的uniapp開發者" },
+  { src: python, title: "python", desc: "專業的Python開發者" },
+  { src: php, title: "php", desc: "專業的PHP開發者" },
+  { src: java, title: "java", desc: "專業的Java開發者" },
+  { src: web, title: "web", desc: "專業的Web開發者" },
+  { src: uniapp, title: "uniapp", desc: "專業的uniapp開發者" },
+  { src: python, title: "python", desc: "專業的Python開發者" },
+  { src: php, title: "php", desc: "專業的PHP開發者" },
 ];
 
 const track = ref<HTMLDivElement | null>(null);
@@ -58,9 +58,13 @@ const current = ref(0);
 const isMobile = ref(
   typeof window !== "undefined" ? window.innerWidth <= 960 : false
 );
-const perSlide = computed(() => (isMobile.value ? 3 : 5));
+const perSlide = computed(() => (isMobile.value ? 2 : 5));
 const pages = computed(() => {
-  const out: { src: string; title: string }[][] = [];
+  const out: {
+    desc: any;
+    src: string;
+    title: string;
+  }[][] = [];
   const size = perSlide.value;
   for (let i = 0; i < logos.length; i += size) {
     out.push(logos.slice(i, i + size));
@@ -142,13 +146,13 @@ onBeforeUnmount(() => {
 }
 
 .logo-card {
-  background: #fff;
-  border: 1px solid #e5eaf2;
+  // background: #fff;
+  // border: 1px solid #e5eaf2;
   border-radius: 12px;
   margin: 30px 10px;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+  // box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
   transition: transform 180ms ease, box-shadow 180ms ease,
     border-color 180ms ease;
   position: relative;
@@ -162,7 +166,7 @@ onBeforeUnmount(() => {
 }
 
 .cover {
-  height: 110px;
+  height: 210px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,10 +180,16 @@ onBeforeUnmount(() => {
 }
 
 .title {
-  margin-top: 8px;
+  text-align: left;
+  margin-top: 13px;
+  margin-bottom: 30px;
   font-size: 12px;
   font-weight: 600;
   color: #111;
+  .desc {
+    font-size: 14px;
+    color: #666;
+  }
 }
 
 .carousel {
@@ -219,7 +229,51 @@ onBeforeUnmount(() => {
 
 @media (max-width: 960px) {
   .row {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 改为显示2列 */
+    gap: 16px;
+  }
+
+  .logo-card {
+    margin: 15px 8px;
+    padding: 8px;
+  }
+
+  .cover {
+    height: 180px; /* 图片容器高度 */
+  }
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .title .desc {
+    font-size: 16px; /* 微调描述字体大小 */
+  }
+
+  /* 确保轮播轨道和幻灯片适应新的布局 */
+  .track {
+    scroll-snap-type: x mandatory;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    gap: 12px;
+  }
+
+  .logo-card {
+    margin: 10px 5px;
+    padding: 6px;
+  }
+
+  .cover {
+    height: 160px;
   }
 }
 </style>

@@ -4,68 +4,67 @@
       <div class="top">
         <div class="brand">
           <!-- <div class="logo">WebX</div> -->
-          <img class="logo" src="../../../assets/Webx-白色版本.png" alt="">
-          <div class="tag">{{ $t('footer.tag') }}</div>
+          <img class="logo" src="../../../assets/Webx-白色版本.png" alt="" />
+          <div class="tag">{{ $t("footer.tag") }}</div>
           <div class="social">
             <a class="s" href="https://facebook.com" target="_blank">
-              <img src="../../../assets/F.svg" alt="Facebook">
+              <img src="../../../assets/F.svg" alt="Facebook" />
             </a>
 
             <a class="s" href="https://www.webull.com" target="_blank">
-              <img src="../../../assets/webullglobal.svg" alt="Webull">
+              <img src="../../../assets/webullglobal.svg" alt="Webull" />
             </a>
 
             <a class="s" href="https://twitter.com" target="_blank">
-              <img src="../../../assets/X.svg" alt="X/Twitter">
+              <img src="../../../assets/X.svg" alt="X/Twitter" />
             </a>
 
             <a class="s" href="https://youtube.com" target="_blank">
-              <img src="../../../assets/youtube.svg" alt="YouTube">
+              <img src="../../../assets/youtube.svg" alt="YouTube" />
             </a>
 
             <a class="s" href="https://instagram.com" target="_blank">
-              <img src="../../../assets/ins.svg" alt="Instagram">
+              <img src="../../../assets/ins.svg" alt="Instagram" />
             </a>
-
           </div>
         </div>
         <div class="cols">
           <div class="col">
-            <div class="title">{{ $t('footer.columns.about') }}</div>
-            <a href="###">{{ $t('footer.about.about_us') }}</a>
-            <a href="###">{{ $t('footer.about.careers') }}</a>
-            <a href="###">{{ $t('footer.about.press') }}</a>
+            <div class="title">{{ $t("footer.columns.about") }}</div>
+            <a href="###">{{ $t("footer.about.about_us") }}</a>
+            <a href="###">{{ $t("footer.about.careers") }}</a>
+            <a href="###">{{ $t("footer.about.press") }}</a>
           </div>
           <div class="col">
-            <div class="title">{{ $t('footer.columns.contact') }}</div>
-            <a href="###">{{ $t('footer.contact.facebook') }}</a>
-            <a href="###">{{ $t('footer.contact.twitter') }}</a>
-            <a href="###">{{ $t('footer.contact.instagram') }}</a>
-            <a href="###">{{ $t('footer.contact.email') }}</a>
+            <div class="title">{{ $t("footer.columns.contact") }}</div>
+            <a href="###">{{ $t("footer.contact.facebook") }}</a>
+            <a href="###">{{ $t("footer.contact.twitter") }}</a>
+            <a href="###">{{ $t("footer.contact.instagram") }}</a>
+            <a href="###">{{ $t("footer.contact.email") }}</a>
           </div>
           <div class="col">
-            <div class="title">{{ $t('footer.columns.money') }}</div>
-            <a href="###">{{ $t('footer.money.affiliates') }}</a>
-            <a href="###">{{ $t('footer.money.vendors') }}</a>
-            <a href="###">{{ $t('footer.money.protect_brand') }}</a>
+            <div class="title">{{ $t("footer.columns.money") }}</div>
+            <a href="###">{{ $t("footer.money.affiliates") }}</a>
+            <a href="###">{{ $t("footer.money.vendors") }}</a>
+            <a href="###">{{ $t("footer.money.protect_brand") }}</a>
           </div>
           <div class="col">
-            <div class="title">{{ $t('footer.columns.legal') }}</div>
-            <a href="###">{{ $t('footer.legal.privacy') }}</a>
-            <a href="###">{{ $t('footer.legal.terms') }}</a>
+            <div class="title">{{ $t("footer.columns.legal") }}</div>
+            <a href="###">{{ $t("footer.legal.privacy") }}</a>
+            <a href="###">{{ $t("footer.legal.terms") }}</a>
           </div>
         </div>
       </div>
-      <div class="copyright">© BingoX Investments Limited. All rights reserved.</div>
+      <div class="copyright">
+        © BingoX Investments Limited. All rights reserved.
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
 .legal {
-  background: #1D263A;
-  
-
+  background: #000000;
 }
 
 .dark {
@@ -93,7 +92,9 @@
 
 .brand .tag {
   margin-top: 8px;
-  color: #cbd5e1;
+  font-weight: 300;
+  font-size: 14px;
+  color: #969da2;
 }
 
 .social {
@@ -120,14 +121,17 @@
 }
 
 .col .title {
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 22px;
+  color: #eaeaea;
   margin-bottom: 8px;
-  color: #f1f5f9;
 }
 
 .col a {
   display: block;
-  color: #cbd5e1;
+  font-weight: 400;
+  font-size: 20px;
+  color: #969da2;
   text-decoration: none;
   margin: 6px 0;
 }
@@ -138,8 +142,11 @@
 
 .copyright {
   margin-top: 24px;
-  color: #9ca3af;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #eaeaea;
+  padding-top: 87px;
+  text-align: center;
 }
 
 @media (max-width: 960px) {

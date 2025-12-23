@@ -353,4 +353,150 @@
     }
   }
 }
+// 移动端样式
+@media screen and (max-width: 768px) {
+  // 添加盒模型统一设置
+  .Project {
+    box-sizing: border-box;
+    * {
+      box-sizing: border-box;
+    }
+
+    padding: 15px 10px;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; // 防止水平滚动
+
+    .title {
+      font-size: 24px;
+      margin-bottom: 30px;
+      padding: 0 10px;
+    }
+
+    .box_item1,
+    .box_item2,
+    .box_item3,
+    .box_item4 {
+      width: 100% !important;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .box_item1 {
+      display: block;
+      padding: 20px;
+      .left {
+        width: 100%;
+        h1 {
+          font-size: 24px;
+        }
+        ul li {
+          font-size: 16px;
+          word-wrap: break-word;
+        }
+      }
+    }
+
+    .box_item2 {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .left,
+      .right {
+        width: 100% !important;
+        max-width: 100%;
+        padding: 20px;
+        margin: 10px 0;
+      }
+      .item {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        h3 {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+        .info {
+          width: 100%;
+          > div {
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
+
+    .box_item3 {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .left,
+      .right {
+        width: 100% !important;
+        max-width: 100%;
+        padding: 20px;
+      }
+      .left {
+        h1 {
+          font-size: 24px;
+          margin-top: 20px;
+          margin-bottom: 30px;
+        }
+        .box {
+          flex-direction: column;
+          gap: 20px;
+          img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+          }
+        }
+      }
+      .right {
+        position: relative;
+        padding: 20px;
+        h1 {
+          font-size: 24px;
+          margin-top: 20px;
+          margin-bottom: 30px;
+        }
+        .image {
+          position: absolute;
+          top: 0px;
+          right: 0;
+          text-align: center;
+          margin: 20px 0;
+          img {
+            right: 0;
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    .box_item4 {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .box {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto;
+        padding: 30px 20px;
+        margin: 10px 0;
+        h3 {
+          font-size: 36px;
+          padding-top: 30px;
+        }
+        h5 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
 </style>

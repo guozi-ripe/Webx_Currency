@@ -7,8 +7,9 @@
     :style="{ '--section-index': 6 }"
   >
     <div class="title">
-      <div>{{ "common.合作伙伴" }}</div>
+      <div>WebX合作伙伴</div>
     </div>
+    <div class="txt">你的資金存放在頂級機構</div>
 
     <!-- 内容 - 优化后的走马灯 -->
     <div class="scroll-container">
@@ -20,14 +21,14 @@
             v-for="(item, index) in partnerLogos1"
             :key="`logo1-${index}`"
           >
-            <img :src="getSmartImageUrl(item)" alt="合作伙伴" />
+            <img :src="item" alt="合作伙伴" />
           </div>
           <div
             class="item"
             v-for="(item, index) in partnerLogos1"
             :key="`logo1-dup-${index}`"
           >
-            <img :src="getSmartImageUrl(item)" alt="合作伙伴" />
+            <img :src="item" alt="合作伙伴" />
           </div>
         </div>
       </div>
@@ -40,14 +41,14 @@
             v-for="(item, index) in partnerLogos2"
             :key="`logo2-${index}`"
           >
-            <img :src="getSmartImageUrl(item)" alt="合作伙伴" />
+            <img :src="item" alt="合作伙伴" />
           </div>
           <div
             class="item"
             v-for="(item, index) in partnerLogos2"
             :key="`logo2-dup-${index}`"
           >
-            <img :src="getSmartImageUrl(item)" alt="合作伙伴" />
+            <img :src="item" alt="合作伙伴" />
           </div>
         </div>
       </div>
@@ -60,14 +61,14 @@
             v-for="(item, index) in partnerLogos3"
             :key="`logo3-${index}`"
           >
-            <img :src="getSmartImageUrl(item)" alt="合作伙伴" />
+            <img :src="item" alt="合作伙伴" />
           </div>
           <div
             class="item"
             v-for="(item, index) in partnerLogos3"
             :key="`logo3-dup-${index}`"
           >
-            <img :src="getSmartImageUrl(item)" alt="合作伙伴" />
+            <img :src="item" alt="合作伙伴" />
           </div>
         </div>
       </div>
@@ -76,6 +77,8 @@
 </template>
 
 <script setup>
+import { computed, onMounted } from "vue";
+
 // 定义props接收父组件传递的数据
 const props = defineProps({
   isMobileDevice: Boolean,
@@ -94,42 +97,41 @@ const props = defineProps({
   },
 });
 
-import { computed, getCurrentInstance, onMounted } from "vue";
-// import { getSmartImageUrl } from "../utils/assetHelper";
-const getSmartImageUrl = (imagePath) => {
-  return new URL(`../assets/${imagePath}`, import.meta.url).href;
-};
-// import { useI18n } from "vue-i18n";
-const instance = getCurrentInstance();
-// const { t } = useI18n();
-// 合作伙伴logo数据 - 现在在组件内部定义，确保数据独立性和可复用性[3](@ref)
-const partnerLogos1 = [
-  "home/Carousel_1.png",
-  "home/Carousel_2.png",
-  "home/Carousel_3.png",
-  "home/Carousel_4.png",
-  "home/Carousel_5.png",
-];
+// 使用 import.meta.glob 批量导入图片
+const imageModules = import.meta.glob("../../../assets/home/*.png", {
+  eager: true,
+});
 
+// 根据文件名动态获取图片
+const getImage = (fileName) => {
+  const path = `../../../assets/home/${fileName}`;
+  return imageModules[path]?.default || "";
+};
+
+const partnerLogos1 = [
+  "Carouse1_1.png",
+  "Carouse1_2.png",
+  "Carouse1_3.png",
+  "Carouse1_4.png",
+  "Carouse1_5.png",
+].map((name) => getImage(name));
 const partnerLogos2 = [
-  "home/Carousel_1-1.png",
-  "home/Carousel_1-2.png",
-  "home/Carousel_1-3.png",
-  "home/Carousel_1-4.png",
-  "home/Carousel_1-5.png",
-  // "home/Carousel_1-6.png",
-  "home/Carousel_1-7.png",
-];
+  "Carousel_1-1.png",
+  "Carousel_1-2.png",
+  "Carousel_1-3.png",
+  "Carousel_1-4.png",
+  "Carousel_1-5.png",
+  "Carousel_1-7.png",
+].map((name) => getImage(name));
 
 const partnerLogos3 = [
-  // "home/Carousel_2-1.png",
-  "home/Carousel_2-2.png",
-  "home/Carousel_2-3.png",
-  "home/Carousel_2-4.png",
-  "home/Carousel_2-5.png",
-  "home/Carousel_2-6.png",
-  "home/Carousel_2-7.png",
-];
+  "Carousel_2-1.png",
+  "Carousel_2-3.png",
+  "Carousel_2-4.png",
+  "Carousel_2-5.png",
+  "Carousel_2-6.png",
+  "Carousel_2-7.png",
+].map((name) => getImage(name));
 const sectionClass = computed(() => {
   return {
     partner: true,
@@ -173,13 +175,19 @@ onMounted(() => {});
   align-items: center;
   gap: 22px;
   justify-content: center;
-  font-weight: 400;
-  font-size: 40px;
-  color: #010101;
-  margin-bottom: 81px;
+  font-weight: bold;
+  font-size: 38px;
+  color: #343434;
+  margin-bottom: 21px;
+}
+.txt {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: #343434;
 }
 .partner {
-  margin-bottom: 176px;
+  margin-top: 58px;
   padding: 48px 24px;
   .scroll-container {
     overflow: hidden;
@@ -213,7 +221,7 @@ onMounted(() => {});
       flex-shrink: 0;
 
       img {
-        width: 244px;
+        width: 203px;
         height: auto;
         filter: grayscale(100%);
         transition: filter 0.3s ease;
@@ -227,6 +235,39 @@ onMounted(() => {});
   }
 }
 
+@media (max-width: 768px) {
+  .partner .scroll-container .item img {
+    width: 123px !important;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+  }
+  .partner {
+    padding: 0;
+    margin: 100px 0 0;
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 28px;
+      color: #343434;
+      margin-bottom: 21px;
+    }
+    .txt {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      color: #343434;
+    }
+  }
+}
 @keyframes scroll-left {
   0% {
     transform: translateX(0);

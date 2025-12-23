@@ -333,7 +333,7 @@ onUnmounted(() => {
     width: 100%;
     /* 确保按钮在移动端始终可见 */
     margin-top: auto; /* 关键属性：将按钮组推到容器底部 */
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     /* 按钮样式优化 */
     .primary,
     .ghost {
