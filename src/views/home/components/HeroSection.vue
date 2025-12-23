@@ -108,7 +108,7 @@ onUnmounted(() => {
     height: 100%;
     overflow: hidden;
     z-index: 1; /* 确保背景在内容下层 */
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     /* 确保背景图固定，营造沉浸感（可选） */

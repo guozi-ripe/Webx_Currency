@@ -246,7 +246,7 @@
         img {
           width: 100%;
           height: auto;
-          border-radius: 8px;
+          border-radius: 30px;
           transition: all 0.4s ease;
 
           &:hover {
@@ -374,7 +374,6 @@
       }
     }
   }
-  
 }
 // 呼吸动画关键帧
 @keyframes breath {

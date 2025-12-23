@@ -14,53 +14,56 @@
 </template>
 <script setup>
 import { useI18n } from "../../../i18n";
-import test2 from "@/assets/test2.webp";
-import test3 from "@/assets/test3.webp";
-import test4 from "@/assets/test4.webp";
-import test5 from "@/assets/test5.webp";
-import test6 from "@/assets/test6.webp";
+import David from "@/assets/new/David@2x.png";
+import William from "@/assets/new/William@2x.png";
+import Olivia from "@/assets/new/Olivia@2x.png";
+import James from "@/assets/new/James@2x.png";
+import Daniel from "@/assets/new/Daniel@2x.png";
+import Mia from "@/assets/new/Mia@2x.png";
+import Emma from "@/assets/new/Emma@2x.png";
+import Michael from "@/assets/new/Michael@2x.png";
 const { t } = useI18n();
 // 数据
 const data = [
   {
-    name: "Jenkin",
-    desc: "專業的Java開發者",
-    img: test2,
+    name: "David",
+    desc: "區塊鏈工程師",
+    img: David,
   },
   {
-    name: "Anne",
-    desc: "專業的Android開發者",
-    img: test3,
+    name: "William",
+    desc: "共識算法工程師",
+    img: William,
   },
   {
-    name: "Jenkin2",
-    desc: "專業的Web開發者",
-    img: test4,
+    name: "Olivia",
+    desc: "智能合約審計師",
+    img: Olivia,
   },
   {
-    name: "Anne3",
-    desc: "專業的pyhton開發者",
-    img: test5,
+    name: "James",
+    desc: "智能合約工程師",
+    img: James,
   },
   {
-    name: "Jen",
-    desc: "專業的全栈開發者",
-    img: test3,
+    name: "Daniel",
+    desc: "Web3後端工程師",
+    img: Daniel,
   },
   {
-    name: "kin",
-    desc: "專業的PHP開發者",
-    img: test5,
+    name: "Mia",
+    desc: "Web3視覺設計師",
+    img: Mia,
   },
   {
-    name: "hike",
-    desc: "專業的C#開發者",
-    img: test2,
+    name: "Emma",
+    desc: "Web3前端工程師",
+    img: Emma,
   },
   {
-    name: "lin",
-    desc: "專業的小程序開發者",
-    img: test6,
+    name: "Michael",
+    desc: "Web3產品經理",
+    img: Michael,
   },
 ];
 </script>
