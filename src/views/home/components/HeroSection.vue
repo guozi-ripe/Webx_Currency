@@ -108,11 +108,11 @@ onUnmounted(() => {
     height: 100%;
     overflow: hidden;
     z-index: 1; /* 确保背景在内容下层 */
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     /* 确保背景图固定，营造沉浸感（可选） */
-    background-attachment: fixed;
+    // background-attachment: fixed;
   }
 }
 
@@ -126,7 +126,7 @@ onUnmounted(() => {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding-top: 157px;
+  padding-top: 127px;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;

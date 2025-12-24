@@ -188,19 +188,25 @@ onUnmounted(() => {
                 @click="handleMenuItemClick"
                 class="menu-link"
               >
-                <span class="menu-icon">📋</span>
+                <span class="menu-icon">
+                  <img src="@/assets/jieshao.svg" alt="">
+                </span>
                 <span class="menu-text">{{ t("nav.項目簡介") }}</span>
               </a>
             </li>
             <li class="mobile-menu-item">
               <a href="#docs" @click="handleMenuItemClick" class="menu-link">
-                <span class="menu-icon">⭐</span>
+                <span class="menu-icon">
+                  <img src="@/assets/youshi.svg" alt=""></img>
+                </span>
                 <span class="menu-text">{{ t("nav.項目優勢") }}</span>
               </a>
             </li>
             <li class="mobile-menu-item">
               <a href="#team" @click="handleMenuItemClick" class="menu-link">
-                <span class="menu-icon">🌐</span>
+                <span class="menu-icon">
+                  <img src="@/assets/diqiu.svg" alt="">
+                </span>
                 <span class="menu-text">{{ t("nav.生態系統") }}</span>
               </a>
             </li>
@@ -210,13 +216,17 @@ onUnmounted(() => {
                 @click="handleMenuItemClick"
                 class="menu-link"
               >
-                <span class="menu-icon">👥</span>
+                <span class="menu-icon">
+                  <img src="@/assets/time.svg" alt="">
+                </span>
                 <span class="menu-text">{{ t("nav.團隊背景") }}</span>
               </a>
             </li>
             <li class="mobile-menu-item">
               <a href="#contact" @click="handleMenuItemClick" class="menu-link">
-                <span class="menu-icon">📞</span>
+                <span class="menu-icon">
+                  <img src="@/assets/phone.svg" alt="">
+                </span>
                 <span class="menu-text">{{ t("nav.聯係我們") }}</span>
               </a>
             </li>

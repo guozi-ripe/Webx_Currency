@@ -180,7 +180,7 @@
 
     height: auto;
     gap: 109px;
-   background: #E5F6FE;
+    background: #e5f6fe;
     border-radius: 20px;
 
     .left {
@@ -222,7 +222,7 @@
     .right {
       width: 640px;
       height: auto;
-     background: #E5F6FE;
+      background: #e5f6fe;
       border-radius: 20px;
       padding: 34px;
     }
@@ -257,7 +257,7 @@
     .left {
       width: 800px;
       height: auto;
-     background: #E5F6FE;
+      background: #e5f6fe;
       border-radius: 20px;
       padding: 34px;
       h1 {
@@ -296,7 +296,7 @@
       position: relative;
       width: 480px;
       height: auto;
-     background: #E5F6FE;
+      background: #e5f6fe;
       border-radius: 20px;
       padding: 34px 34px 64px;
       h1 {
@@ -345,7 +345,7 @@
     .box {
       width: 420px;
       height: 244px;
-     background: #E5F6FE;
+      background: #e5f6fe;
       border-radius: 20px;
       text-align: center;
       margin: auto 0;
@@ -397,7 +397,6 @@
 
     .box_item1 {
       display: block;
-      padding: 20px;
       .left {
         width: 100%;
         h1 {
@@ -406,6 +405,11 @@
         ul li {
           font-size: 16px;
           word-wrap: break-word;
+        }
+      }
+      .right {
+        img {
+          height: 300px;
         }
       }
     }
