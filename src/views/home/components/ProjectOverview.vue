@@ -199,6 +199,7 @@
         font-weight: 600;
         font-size: 26px;
         color: #000000;
+        white-space: nowrap;
         span {
           font-weight: 200;
         }
@@ -218,6 +219,11 @@
     align-items: center;
     margin: 19px 0;
     gap: 22px;
+    h1 {
+      font-weight: bold;
+      font-size: 36px;
+      color: #000000;
+    }
     .left,
     .right {
       width: 640px;
@@ -254,6 +260,11 @@
     justify-content: space-between;
     align-items: stretch;
     gap: 21px;
+    h1 {
+      font-weight: bold;
+      font-size: 36px;
+      color: #000000;
+    }
     .left {
       width: 800px;
       height: auto;
@@ -304,7 +315,7 @@
         font-size: 36px;
         color: #000000;
         margin-bottom: 49px;
-        margin-top: 160px;
+        margin-top: 80px;
       }
       .item {
         font-weight: 200;
@@ -331,6 +342,7 @@
         img {
           width: 230px;
           height: 201px;
+          opacity: 0.4;
         }
       }
     }
@@ -393,6 +405,9 @@
       max-width: 100%;
       margin-left: 0;
       margin-right: 0;
+      h1 {
+        font-size: 24px;
+      }
     }
 
     .box_item1 {

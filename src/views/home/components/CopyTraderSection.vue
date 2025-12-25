@@ -267,9 +267,10 @@ onBeforeUnmount(() => {
 }
 
 .sub {
-  font-weight: bold;
-  font-size: 30px;
+  font-weight: 400;
+  font-size: 26px;
   color: #343434;
+  text-align: center;
 }
 
 .chips-wrapper {
@@ -343,12 +344,12 @@ onBeforeUnmount(() => {
 @media (max-width: 768px) {
   .promo-dark .inner .heading {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 30px;
     color: #343434;
   }
   .promo-dark .inner .sub {
     text-align: center;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 20px;
     color: #343434;
   }

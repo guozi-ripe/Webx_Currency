@@ -97,7 +97,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="navbar-placeholder"></div>
+  <!-- <div class="navbar-placeholder"></div> -->
 
   <nav
     class="navbar"

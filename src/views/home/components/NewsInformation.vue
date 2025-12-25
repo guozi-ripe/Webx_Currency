@@ -86,7 +86,7 @@
           font-weight: 500;
           font-size: 50px;
           color: #ffffff;
-          margin-bottom: 58px;
+          margin-bottom: 28px;
         }
         .txt {
           font-weight: 500;
@@ -102,9 +102,9 @@
           border-radius: 35px;
           text-align: center;
           font-weight: 500;
-          font-size: 30px;
+          font-size: 26px;
           color: #003baf;
-          padding: 20px 31px;
+          padding: 10px;
           cursor: pointer;
           transition: all 0.3s ease;
           animation: breath 3s ease-in-out infinite;
@@ -138,6 +138,37 @@
     max-width: 1200px;
     padding: 50px 16px 0;
     margin: -50px auto 0;
+    .item .item_r {
+      width: 641px;
+      height: 501px;
+      img {
+        width: 100%;
+        height: 100%;
+        // transition: all 0.4s ease;
+
+        border-radius: 30px;
+        &:hover {
+          transform: scale(1.08);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+    .item2 .item_r {
+      width: 500px;
+      height: 480px;
+      img {
+        width: 100%;
+        height: 100%;
+        // transition: all 0.4s ease;
+
+        border-radius: 30px;
+        &:hover {
+          transform: scale(1.08);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+
     .item {
       display: flex;
       justify-content: space-between;
@@ -174,7 +205,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 44px;
+      gap: 144px;
       .item_b {
         margin-top: 38px;
         .btn {
@@ -240,22 +271,6 @@
         }
       }
     }
-    .item,
-    .item2 {
-      .item_r {
-        img {
-          width: 100%;
-          height: auto;
-          border-radius: 30px;
-          transition: all 0.4s ease;
-
-          &:hover {
-            transform: scale(1.08);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-          }
-        }
-      }
-    }
   }
 }
 // 移动端样式
@@ -299,7 +314,7 @@
             font-weight: 500;
             font-size: 20px;
             color: #003baf;
-            padding: 10px 21px;
+            padding: 10px;
             max-width: 200px;
           }
         }
@@ -373,6 +388,14 @@
         font-size: 20px;
       }
     }
+  }
+  .News .news_info .item .item_r {
+    width: 100%;
+    height: auto;
+  }
+  .News .news_info .item2 .item_r {
+    width: 100%;
+    height: auto;
   }
 }
 // 呼吸动画关键帧

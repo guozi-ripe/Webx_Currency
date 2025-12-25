@@ -16,6 +16,23 @@
           <button class="ghost">{{ $t("hero.ctaSecondary") }}</button>
         </div>
       </div>
+      <div class="banner_img" v-if="!isMobile">
+        <div class="banner01">
+          <div class="imgLogo"><img src="@/assets/new/diqiu.gif" alt="" /></div>
+
+          <div class="img_logo2">
+            <img src="@/assets/new/logo.png" alt="" />
+          </div>
+        </div>
+        <div class="banner02">
+          <img class="img1" src="@/assets/new/游戏logo@2x.png" alt="" />
+          <img class="img2" src="@/assets/new/购物.png" alt="" />
+          <img class="img3" src="@/assets/new/logo@2x.png" alt="" />
+          <img class="img4" src="@/assets/new/比特币@2x.png" alt="" />
+          <img class="img5" src="@/assets/new/webxlogo@2x.png" alt="" />
+          <img class="img6" src="@/assets/new/tlogo@2x.png" alt="" />
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -43,7 +60,7 @@ const backgroundImageUrl = ref("");
 const updateBackgroundImage = () => {
   backgroundImageUrl.value = isMobile.value
     ? new URL("../../../assets/new_m/banner2@2x.png", import.meta.url).href
-    : new URL("../../../assets/new/banner @2x.png", import.meta.url).href;
+    : new URL("../../../assets/new/banner@2x.png", import.meta.url).href;
 };
 
 // 防抖函数：确保频繁触发的事件不会导致性能问题[6,7](@ref)
@@ -90,16 +107,14 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 .hero {
-  padding: 20px 16px 30px;
+  padding: 0px 16px 30px;
   position: relative;
   color: #000;
   min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-
   box-sizing: border-box;
-  padding-top: 0px; /* 默认PC端头部高度 */
   .background-carousel {
     position: absolute;
     top: 0;
@@ -128,13 +143,89 @@ onUnmounted(() => {
   margin: 0 auto;
   padding-top: 127px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.1fr 0.3fr;
   gap: 40px;
   align-items: center;
   position: relative;
   z-index: 1;
 }
+.banner_img {
+  position: relative;
+  .banner01 {
+    position: relative;
 
+    .img_logo2 {
+      position: absolute;
+      top: -160px;
+      right: -100px;
+      // 呼吸动效
+      animation: breathing 2s ease-in-out infinite;
+      img {
+        width: 341px;
+        height: 140px;
+      }
+    }
+  }
+  .banner02 {
+    position: absolute;
+    width: 800px; /* 例如，大于最右图片的 left + width */
+    height: 300px; /* 例如，大于最下图片的 top + height */
+    .img1 {
+      position: absolute;
+      top: -50px;
+      left: -340px;
+      width: 107px;
+      height: 107px;
+    }
+    .img2 {
+      position: absolute;
+      top: 10px;
+      left: -160px;
+      width: 96px;
+      height: 96px;
+    }
+    .img3 {
+      position: absolute;
+      top: 70px;
+      left: -500px;
+      width: 123px;
+      height: 123px;
+    }
+    .img4 {
+      position: absolute;
+      top: 120px;
+      left: -330px;
+      width: 135px;
+      height: 136px;
+    }
+    .img5 {
+      position: absolute;
+      top: 160px;
+      left: -10px;
+      width: 148px;
+      height: 149px;
+    }
+    .img6 {
+      position: absolute;
+      top: 120px;
+      left: 230px;
+      width: 129px;
+      height: 130px;
+    }
+  }
+}
+
+.imgLogo {
+  position: absolute;
+  bottom: -120px;
+  right: -130px;
+  width: 411px !important;
+  height: 411px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
 .text-content {
   display: flex;
   flex-direction: column;
@@ -354,6 +445,18 @@ onUnmounted(() => {
       background-color: #fff;
       border: var(--color-primary) solid 1px !important;
     }
+  }
+}
+// 呼吸动效
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 </style>

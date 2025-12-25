@@ -181,10 +181,10 @@ onMounted(() => {});
   margin-bottom: 21px;
 }
 .txt {
-  text-align: center;
-  font-weight: bold;
-  font-size: 30px;
+  font-weight: 400;
+  font-size: 26px;
   color: #343434;
+  text-align: center;
 }
 .partner {
   margin-top: 58px;
@@ -256,13 +256,13 @@ onMounted(() => {});
       gap: 22px;
       justify-content: center;
       font-weight: bold;
-      font-size: 28px;
+      font-size: 30px;
       color: #343434;
       margin-bottom: 21px;
     }
     .txt {
       text-align: center;
-      font-weight: bold;
+      font-weight: 400;
       font-size: 20px;
       color: #343434;
     }
