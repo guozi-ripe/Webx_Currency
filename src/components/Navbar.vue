@@ -301,6 +301,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 40px 4px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -620,21 +621,49 @@ body.menu-open {
   }
 }
 
+@media (max-width: 1440px) and  (min-width: 1025px) {
+  .container {
+  max-width: 1200px;
+  padding: 40px 34px !important;
+  margin: 0 auto;
+}
+
+}
 /* 响应式设计 */
 @media (max-width: 960px) {
   .navbar-placeholder {
     height: 56px;
   }
-
+.navbar {
+    position: fixed;
+    .brand img {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 135%);
+      width: 140px;
+    }
+  }
+/* 汉堡按钮样式 */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 42px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
   .logo {
     width: 78px;
     height: 42px;
   }
 
   .container {
-    padding: 0 24px;
-    justify-content: flex-start;
-    height: 56px;
+    padding: 50px 34px;
+    justify-content: space-between;
+    // height: 56px;
+
   }
 
   .links {
@@ -655,15 +684,38 @@ body.menu-open {
     position: static;
     transform: none;
   }
+  .actions img{
+    width: 55px;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    .brand img {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 155%);
+      width: 100px;
+    }
+  }
+/* 汉堡按钮样式 */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 32px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
   .navbar-placeholder {
     height: 56px;
   }
 
   .container {
-    height: 56px;
     justify-content: space-between;
   }
 
@@ -676,6 +728,9 @@ body.menu-open {
     padding: 3px 6px;
     width: 100px;
   }
+   .actions img{
+    width: 35px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -684,7 +739,7 @@ body.menu-open {
     .brand img {
       position: absolute;
       left: 50%;
-      transform: translate(-50%, 65%);
+      transform: translate(-50%, 75%);
     }
   }
 

@@ -49,6 +49,7 @@
 <style lang="scss" scoped>
 .global {
   background: #f6f6f6;
+
   .center {
     max-width: 1200px;
     padding: 50px 16px;
@@ -122,6 +123,89 @@
       p {
         font-weight: 300;
         font-size: 20px;
+        color: #343434;
+      }
+    }
+  }
+}
+// 小尺寸pc端
+@media (max-width: 1440px) and (min-width: 1025px) {
+  .global .center .item .box2 .box2_1 {
+    padding: 10px !important;
+  }
+  .global .center .item .box2 .box2_2 {
+    padding: 10px !important;
+  }
+  .global {
+    background: #f6f6f6;
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+
+      padding: 40px 104px;
+      gap: 16px;
+      img {
+        width: 200px;
+        margin: 0 auto;
+      }
+      .box {
+        background: #ffffff;
+        border-radius: 35px;
+        text-align: center;
+        padding: 40px 10px;
+        margin: 0;
+
+        p {
+          width: 278px;
+          margin-top: 40px;
+        }
+      }
+      .box2 {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+        /* 让 .box2 自身拉伸并填充空间 */
+        flex: 1;
+        /* 让内部的两个子项平均分配高度 */
+        .box2_1,
+        .box2_2 {
+          display: flex;
+          flex-direction: column;
+          // 使内容在各自盒子内垂直居中，视觉效果更统一
+          justify-content: center; // 新增
+          // 让每个小盒子都占据一部分可用空间
+          flex: 1; // 新增
+
+          background: #ffffff;
+          border-radius: 35px;
+          text-align: center;
+          p {
+            width: 134px;
+          }
+        }
+      }
+      .box3 {
+        background: #ffffff;
+        border-radius: 35px;
+        text-align: center;
+        padding: 81px 20px 57px;
+
+        p {
+          width: 278px;
+          text-align: center;
+          margin-top: 40px;
+        }
+      }
+
+      h3 {
+        font-weight: bold;
+        font-size: 26px;
+        color: #343434;
+      }
+      p {
+        font-weight: 300;
+        font-size: 16px;
         color: #343434;
       }
     }

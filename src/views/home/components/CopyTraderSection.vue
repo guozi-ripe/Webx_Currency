@@ -250,7 +250,7 @@ onBeforeUnmount(() => {
 
 <style scoped lang="scss">
 .promo-dark {
-  padding: 48px 24px;
+  padding: 8px 24px;
   color: #d1d5db;
 }
 

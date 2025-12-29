@@ -40,47 +40,30 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 
-// 响应式数据：是否为移动设备（包括平板）
+// 响应式数据：是否为移动端
 const isMobile = ref(false);
+// 响应式数据：当前视口宽度
 const viewportWidth = ref(window.innerWidth);
 
-// 改进的设备检测函数
+// 检测设备类型函数
 const checkDevice = () => {
-  const userAgent = navigator.userAgent.toLowerCase();
-  const width = viewportWidth.value;
-
-  // 方法1：通过屏幕宽度判断（最可靠）
-  const isPhone = width <= 768; // 手机
-  const isTabletByWidth = width > 768 && width <= 1024; // 平板宽度范围
-
-  // 方法2：通过用户代理字符串判断
-  const isIOS = /iphone|ipad|ipod/i.test(userAgent);
-  const isAndroid = /android/i.test(userAgent);
-  const isMobileUserAgent =
-    isIOS ||
-    isAndroid ||
-    /webOS|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-
-  // 方法3：检测触摸支持（辅助判断）
-  const hasTouchSupport =
-    "ontouchstart" in window ||
-    (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
-
-  // 综合判断：如果是手机，或者屏幕宽度在平板范围内且具备移动设备特征
-  isMobile.value =
-    isPhone || (isTabletByWidth && (isMobileUserAgent || hasTouchSupport));
+  const userAgent = navigator.userAgent;
+  const mobileRegex =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+  isMobile.value = mobileRegex.test(userAgent);
 };
 
 // 动态背景图片URL
 const backgroundImageUrl = ref("");
 
+// 根据设备类型更新背景图
 const updateBackgroundImage = () => {
   backgroundImageUrl.value = isMobile.value
     ? new URL("../../../assets/new_m/banner2@2x.png", import.meta.url).href
     : new URL("../../../assets/new/banner@2x.png", import.meta.url).href;
 };
 
-// 防抖函数
+// 防抖函数：确保频繁触发的事件不会导致性能问题[6,7](@ref)
 const debounce = <T extends (...args: any[]) => void>(
   func: T,
   delay: number
@@ -92,21 +75,32 @@ const debounce = <T extends (...args: any[]) => void>(
   };
 };
 
-// 处理窗口变化
+// 处理窗口变化的函数
 const handleResize = () => {
-  viewportWidth.value = window.innerWidth;
+  // 更新视口宽度[1,7](@ref)
+  viewportWidth.value =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  // 检测设备类型
   checkDevice();
+  // 更新背景图
   updateBackgroundImage();
 };
 
+// 创建防抖后的处理函数（250ms延迟）
 const debouncedHandleResize = debounce(handleResize, 250);
 
+// 生命周期
 onMounted(() => {
+  // 初始检测
   handleResize();
+  // 使用 addEventListener 替代直接赋值 onresize，避免监听器被覆盖[8](@ref)
   window.addEventListener("resize", debouncedHandleResize);
 });
 
 onUnmounted(() => {
+  // 组件卸载时务必移除监听器，防止内存泄漏[2,8](@ref)
   window.removeEventListener("resize", debouncedHandleResize);
 });
 </script>
@@ -145,12 +139,11 @@ onUnmounted(() => {
 
 .container {
   max-width: 1200px;
-  padding: 40px 24px;
   width: 100%;
   margin: 0 auto;
   padding-top: 127px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.1fr 0.3fr;
   gap: 40px;
   align-items: center;
   position: relative;
@@ -179,45 +172,45 @@ onUnmounted(() => {
     height: 300px; /* 例如，大于最下图片的 top + height */
     .img1 {
       position: absolute;
-      top: -40px;
-      left: -55px;
-      width: 97px;
-      height: 97px;
+      top: -50px;
+      left: -340px;
+      width: 107px;
+      height: 107px;
     }
     .img2 {
       position: absolute;
       top: 10px;
-      left: 80px;
-      width: 90px;
-      height: 90px;
+      left: -160px;
+      width: 96px;
+      height: 96px;
     }
     .img3 {
       position: absolute;
       top: 70px;
-      left: -210px;
-      width: 103px;
-      height: 103px;
+      left: -500px;
+      width: 123px;
+      height: 123px;
     }
     .img4 {
       position: absolute;
-      top: 160px;
-      left: -10px;
-      width: 115px;
-      height: 116px;
+      top: 120px;
+      left: -330px;
+      width: 135px;
+      height: 136px;
     }
     .img5 {
       position: absolute;
-      top: 150px;
-      left: 230px;
-      width: 108px;
-      height: 109px;
+      top: 160px;
+      left: -10px;
+      width: 148px;
+      height: 149px;
     }
     .img6 {
       position: absolute;
-      top: 100px;
-      left: 500px;
-      width: 109px;
-      height: 110px;
+      top: 120px;
+      left: 230px;
+      width: 129px;
+      height: 130px;
     }
   }
 }
@@ -226,8 +219,8 @@ onUnmounted(() => {
   position: absolute;
   bottom: -120px;
   right: -130px;
-  width: 401px !important;
-  height: 401px;
+  width: 411px !important;
+  height: 411px;
   img {
     width: 100%;
     height: 100%;
@@ -321,152 +314,35 @@ onUnmounted(() => {
   }
 }
 
-@media (min-width: 1025px) {
-  .text-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    h1 {
-      line-height: 1.2;
-      margin: 0 0 28px;
-      font-weight: bold;
-      font-size: 50px;
-      color: #000000;
-      max-width: 600px;
-    }
-    h3 {
-      font-weight: 400;
-      font-size: 40px;
-      color: #000000;
-
-      margin-bottom: 39px;
-    }
-    p {
-      width: 507px;
-      margin-bottom: 88px;
-    }
-  }
-  .subtitle {
-    font-size: 14px;
-  }
-
-  .primary {
-    font-weight: 400;
-    font-size: 20px;
-  }
-
-  .ghost {
-    font-weight: 400;
-
-    font-size: 20px;
-  }
-  .banner_img {
-    transform: scale(0.9);
-    transform-origin: right center;
-    .banner02 {
-      position: absolute;
-      width: 800px; /* 例如，大于最右图片的 left + width */
-      height: 300px; /* 例如，大于最下图片的 top + height */
-      .img1 {
-        position: absolute;
-        top: -20px;
-        left: -155px;
-        width: 97px;
-        height: 97px;
-      }
-      .img2 {
-        position: absolute;
-        top: 10px;
-        left: -20px;
-        width: 90px;
-        height: 90px;
-      }
-      .img3 {
-        position: absolute;
-        top: 70px;
-        left: -260px;
-        width: 103px;
-        height: 103px;
-      }
-      .img4 {
-        position: absolute;
-        top: 160px;
-        left: -30px;
-        width: 115px;
-        height: 116px;
-      }
-      .img5 {
-        position: absolute;
-        top: 170px;
-        left: 180px;
-        width: 108px;
-        height: 109px;
-      }
-      .img6 {
-        position: absolute;
-        top: 120px;
-        left: 320px;
-        width: 109px;
-        height: 110px;
-      }
-    }
-  }
-  .imgLogo {
-    bottom: -130px;
-    right: -15px;
-    width: 381px !important;
-    height: 381px;
-  }
-  .banner_img .banner01 .img_logo2 {
-    top: -130px;
-    right: 0px;
-    img {
-      width: 301px;
-      height: 140px;
-    }
-  }
-}
 /* 平板设备适配 (768px - 1024px) */
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 1024px) {
+  .hero {
+    padding-top: 70px; /* 平板端头部高度调整 */
+  }
+
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 30px;
     text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 90%;
-    padding: 0;
   }
 
   .text-content {
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-start; /* 确保内容从顶部开始 */
+  }
+
+  .visual-content {
+    order: 1; /* 视觉内容在上 */
+    max-height: 40vh;
   }
 
   .text-content h1 {
-    font-size: 56px;
-    text-align: center;
-    width: 100%;
+    font-size: 36px;
   }
 
   .subtitle {
-    text-align: left;
-    font-size: 26px;
+    font-size: 15px;
     max-width: 100%;
     margin: 0 0 20px;
-    width: 100%;
-    color: #000;
-  }
-
-  .actions {
-    justify-content: center;
-    width: 100%;
   }
 }
 
@@ -530,32 +406,37 @@ onUnmounted(() => {
       width: 100%;
       max-width: 240px;
       margin: 0 auto 30px;
-      flex: 1;
+      flex: 1; /* 让段落占据剩余空间，将按钮推到底部 */
     }
   }
 
   .actions {
-    display: block !important;
+    display: flex;
     gap: 12px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
     margin: 20px 0 10px;
     padding: 15px 0;
     position: relative;
     z-index: 10;
     flex-shrink: 0;
     width: 100%;
+    /* 确保按钮在移动端始终可见 */
+    margin-top: auto; /* 关键属性：将按钮组推到容器底部 */
     padding-bottom: 50px;
+    /* 按钮样式优化 */
     .primary,
     .ghost {
       flex: 1;
       min-width: 140px;
+      max-width: 200px;
       position: relative;
       z-index: 31;
       opacity: 1 !important;
       visibility: visible !important;
       font-size: 18px;
       padding: 12px 20px;
-
-      margin: 10px;
       /* 添加底部边距确保不被遮挡 */
       margin-bottom: env(safe-area-inset-bottom, 10px); /* 考虑iOS安全区域 */
     }
