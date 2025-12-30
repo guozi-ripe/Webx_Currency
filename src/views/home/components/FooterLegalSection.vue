@@ -1,11 +1,11 @@
 <template>
   <section class="legal dark" id="fooe">
-    <div class="container">
+    <footer class="container">
       <div class="top">
         <div class="brand">
           <!-- <div class="logo">WebX</div> -->
           <img class="logo" src="../../../assets/Webx-白色版本.png" alt="" />
-          <div class="tag">{{ $t("footer.tag") }}</div>
+          <h1 class="tag">{{ $t("footer.tag") }}</h1>
           <div class="social">
             <a class="s" href="https://facebook.com" target="_blank">
               <img src="../../../assets/F.svg" alt="Facebook" />
@@ -30,26 +30,26 @@
         </div>
         <div class="cols">
           <div class="col">
-            <div class="title">{{ $t("footer.columns.about") }}</div>
+            <h3 class="title">{{ $t("footer.columns.about") }}</h3>
             <a href="###">{{ $t("footer.about.about_us") }}</a>
             <a href="###">{{ $t("footer.about.careers") }}</a>
             <a href="###">{{ $t("footer.about.press") }}</a>
           </div>
           <div class="col">
-            <div class="title">{{ $t("footer.columns.contact") }}</div>
+            <h3 class="title">{{ $t("footer.columns.contact") }}</h3>
             <a href="###">{{ $t("footer.contact.facebook") }}</a>
             <a href="###">{{ $t("footer.contact.twitter") }}</a>
             <a href="###">{{ $t("footer.contact.instagram") }}</a>
             <a href="###">{{ $t("footer.contact.email") }}</a>
           </div>
           <div class="col">
-            <div class="title">{{ $t("footer.columns.money") }}</div>
+            <h3 class="title">{{ $t("footer.columns.money") }}</h3>
             <a href="###">{{ $t("footer.money.affiliates") }}</a>
             <a href="###">{{ $t("footer.money.vendors") }}</a>
             <a href="###">{{ $t("footer.money.protect_brand") }}</a>
           </div>
           <div class="col">
-            <div class="title">{{ $t("footer.columns.legal") }}</div>
+            <h3 class="title">{{ $t("footer.columns.legal") }}</h3>
             <a href="###">{{ $t("footer.legal.privacy") }}</a>
             <a href="###">{{ $t("footer.legal.terms") }}</a>
           </div>
@@ -58,7 +58,7 @@
       <div class="copyright">
         © BingoX Investments Limited. All rights reserved.
       </div>
-    </div>
+    </footer>
   </section>
 </template>
 

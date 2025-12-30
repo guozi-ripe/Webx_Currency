@@ -164,13 +164,12 @@
     </div>
   </section>
 </template>
+
 <style scoped lang="scss">
 .Project {
   margin: 57px auto 121px;
   max-width: 1200px;
-  .container {
-    padding: 40px 24px;
-  }
+
   .title {
     font-weight: bold;
     font-size: 38px;
@@ -220,7 +219,7 @@
   .box_item2 {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     margin: 19px 0;
     gap: 22px;
     h1 {

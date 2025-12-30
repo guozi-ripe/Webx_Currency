@@ -685,8 +685,8 @@ body.menu-open {
     transform: none;
   }
   .actions img{
-    width: 55px;
-    margin-top: 10px;
+    width: 33px;
+    height: 33px;
   }
 }
 
@@ -696,8 +696,8 @@ body.menu-open {
     .brand img {
       position: absolute;
       left: 50%;
-      transform: translate(-50%, 155%);
-      width: 100px;
+      transform: translate(-50%, 165%);
+      width: 90px;
     }
   }
 /* 汉堡按钮样式 */
@@ -706,7 +706,7 @@ body.menu-open {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 32px;
+  width: 30px;
   height: 20px;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -728,9 +728,7 @@ body.menu-open {
     padding: 3px 6px;
     width: 100px;
   }
-   .actions img{
-    width: 35px;
-  }
+ 
 }
 
 @media (max-width: 480px) {
@@ -739,7 +737,7 @@ body.menu-open {
     .brand img {
       position: absolute;
       left: 50%;
-      transform: translate(-50%, 75%);
+      transform: translate(-50%, 85%);
     }
   }
 

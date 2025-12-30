@@ -207,14 +207,14 @@ onUnmounted(() => {
     }
     .img5 {
       position: absolute;
-      top: 150px;
-      left: 230px;
+      top: 200px;
+      left: 240px;
       width: 108px;
       height: 109px;
     }
     .img6 {
       position: absolute;
-      top: 100px;
+      top: 130px;
       left: 500px;
       width: 109px;
       height: 110px;
@@ -321,7 +321,7 @@ onUnmounted(() => {
   }
 }
 
-@media (min-width: 1025px) {
+@media (max-width: 1440px) and (min-width: 1025px) {
   .text-content {
     display: flex;
     flex-direction: column;
@@ -414,7 +414,7 @@ onUnmounted(() => {
   }
   .imgLogo {
     bottom: -130px;
-    right: -15px;
+    right: -30px;
     width: 381px !important;
     height: 381px;
   }
