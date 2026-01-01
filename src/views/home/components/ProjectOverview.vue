@@ -11,7 +11,7 @@
               <li><span>幣符：</span>WebX</li>
               <li><span>中文全稱：</span> ：全球鏈商</li>
               <li><span> 英文全稱：</span>WebX Global Chain Commerce</li>
-              <li><span>代幣發行量：</span> 21億 (2,100,000,000)</li>
+              <li><span>代幣發行量：</span> 12億 (1,200,000,000)</li>
             </ul>
           </div>
           <div class="right">

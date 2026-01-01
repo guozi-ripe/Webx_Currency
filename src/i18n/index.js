@@ -341,7 +341,7 @@ const messages = {
       ctaSecondary: "聯繫項目方",
       stats: {
         rating: "WEBX 代币",
-        investors: "2100M+ 发行量",
+        investors: "1200M+ 发行量",
         projects: "100+ 国际奖项",
       },
     },
@@ -515,7 +515,7 @@ const messages = {
           base: {
             title: "5.3.1 基礎信息",
             ticker: "代幣：WEBX（WX）",
-            supply: "總量：21 億，恆定不增發",
+            supply: "總量：12 億，恆定不增發",
             issue: "發行：迪拜主體獨立發行，合規隔離運營",
             flow: "交易：PancakeSwap 上線，支持 BNB/USDT；兌換收取 5% 用於生態能量護航",
           },
