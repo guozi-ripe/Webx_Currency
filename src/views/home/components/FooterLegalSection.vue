@@ -94,7 +94,7 @@
   margin-top: 8px;
   font-weight: 300;
   font-size: 14px;
-  color: #969da2;
+  color: #fff;
 }
 
 .social {
@@ -131,13 +131,15 @@
   display: block;
   font-weight: 400;
   font-size: 20px;
-  color: #969da2;
+  
+
+  color: #fff;
   text-decoration: none;
   margin: 6px 0;
 }
 
 .col a:hover {
-  color: #fff;
+  color: #969da2;
 }
 
 .copyright {
