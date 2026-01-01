@@ -152,7 +152,7 @@
             <h5>代币</h5>
           </div>
           <div class="box">
-            <h3>2100M</h3>
+            <h3>1200M</h3>
             <h5>發行量</h5>
           </div>
           <div class="box">

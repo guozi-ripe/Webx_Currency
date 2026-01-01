@@ -64,7 +64,7 @@
 
 <style scoped lang="scss">
 .legal {
-  background: #000000;
+  background: #003baf;
 }
 
 .dark {
@@ -137,7 +137,7 @@
 }
 
 .col a:hover {
-  color: var(--color-primary);
+  color: #fff;
 }
 
 .copyright {
