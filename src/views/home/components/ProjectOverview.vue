@@ -72,15 +72,7 @@
               <div class="box1">
                 <h3>計劃支持</h3>
                 <div class="info">
-                  <div>
-                    <img src="@/assets/new/MetaMask@2x.png" alt="" />
-                    <p>MetaMask</p>
-                  </div>
-                  <div>
-                    <img src="@/assets/new/Trust Wallet@2x.png" alt="" />
-                    <p>Trust Wallet</p>
-                  </div>
-                  <div>
+                   <div>
                     <img src="@/assets/new/OKX Wallet@2x.png" alt="" />
                     <p>OKX Wallet</p>
                   </div>
@@ -88,16 +80,8 @@
                     <img src="@/assets/new/Binance Web3 @2x.png" alt="" />
                     <p>Binance Web3</p>
                   </div>
-                  <div>
-                    <img src="@/assets/new/TokenPocket@2x.png" alt="" />
-                    <p>TokenPocket</p>
-                  </div>
-                </div>
-              </div>
-              <div class="box2">
-                <h3>已適配(測試)</h3>
-                <div class="info">
-                  <div>
+                 
+                    <div>
                     <img src="@/assets/new/SafePal@2x.png" alt="" />
                     <p>SafePal</p>
                   </div>
@@ -108,6 +92,28 @@
                   <div>
                     <img src="@/assets/new/Bitget@2x.png" alt="" />
                     <p>Bitget</p>
+                  </div>
+                </div>
+              </div>
+              <div class="box2">
+                <h3>已適配(測試)</h3>
+                <div class="info">
+                  <div>
+                    <img src="../../../assets//new/imtoken logo.png" alt="" />
+                    <p>imToken</p>
+                  </div>
+                  <div>
+                    <img src="@/assets/new/MetaMask@2x.png" alt="" />
+                    <p>MetaMask</p>
+                  </div>
+                  <div>
+                    <img src="@/assets/new/Trust Wallet@2x.png" alt="" />
+                    <p>Trust Wallet</p>
+                  </div>
+                 
+                   <div>
+                    <img src="@/assets/new/TokenPocket@2x.png" alt="" />
+                    <p>TokenPocket</p>
                   </div>
                 </div>
               </div>
