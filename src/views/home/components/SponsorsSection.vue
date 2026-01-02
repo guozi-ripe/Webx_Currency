@@ -22,50 +22,19 @@ import Daniel from "@/assets/new/Daniel@2x.png";
 import Mia from "@/assets/new/Mia@2x.png";
 import Emma from "@/assets/new/Emma@2x.png";
 import Michael from "@/assets/new/Michael@2x.png";
+import { computed } from "vue";
 const { t } = useI18n();
 // 数据
-const data = [
-  {
-    name: "David",
-    desc: "區塊鏈工程師",
-    img: David,
-  },
-  {
-    name: "William",
-    desc: "共識算法工程師",
-    img: William,
-  },
-  {
-    name: "Olivia",
-    desc: "智能合約審計師",
-    img: Olivia,
-  },
-  {
-    name: "James",
-    desc: "智能合約工程師",
-    img: James,
-  },
-  {
-    name: "Daniel",
-    desc: "Web3後端工程師",
-    img: Daniel,
-  },
-  {
-    name: "Mia",
-    desc: "Web3視覺設計師",
-    img: Mia,
-  },
-  {
-    name: "Emma",
-    desc: "Web3前端工程師",
-    img: Emma,
-  },
-  {
-    name: "Michael",
-    desc: "Web3產品經理",
-    img: Michael,
-  },
-];
+const data = computed(() => [
+  { name: 'David',  desc: t('Team.David.desc'),  img: David },
+  { name: 'William',desc: t('Team.William.desc'),img: William },
+  { name: 'Olivia', desc: t('Team.Olivia.desc'), img: Olivia },
+  { name: 'James',  desc: t('Team.James.desc'),  img: James },
+  { name: 'Daniel', desc: t('Team.Daniel.desc'), img: Daniel },
+  { name: 'Mia',    desc: t('Team.Mia.desc'),    img: Mia },
+  { name: 'Emma',   desc: t('Team.Emma.desc'),   img: Emma },
+  { name: 'Michael',desc: t('Team.Michael.desc'),img: Michael },
+])
 </script>
 <style scoped lang="scss">
 .sponsors {

@@ -1,50 +1,44 @@
 <template>
-  <div class="global">
-    <div class="center">
-      <div class="top">
-        <div class="title">{{ $t("global.全球信赖的") }}</div>
-        <div class="title2">
-          {{ $t("global.了解為什麼來自 100 多個國家的數百萬投資者加入 WebX") }}
+ <div class="global">
+  <div class="center">
+    <div class="top">
+      <div class="title">{{ $t('global.title') }}</div>
+      <div class="title2">{{ $t('global.title2') }}</div>
+    </div>
+
+    <div class="item">
+      <!-- 社會的 -->
+      <div class="box">
+        <img src="@/assets/new/图层 13@2x.png" alt="" />
+        <div class="txt">
+          <h3>{{ $t('global.social.h3') }}</h3>
+          <p>{{ $t('global.social.p') }}</p>
         </div>
       </div>
-      <div class="item">
-        <div class="box">
-          <img src="@/assets/new/图层 13@2x.png" alt="" />
-          <div class="txt">
-            <h3>社會的</h3>
-            <p>
-              目前全球互聯網用戶規模 已突破50億，線上消費市場規模超過8萬億美元
-            </p>
-          </div>
+
+      <!-- 可靠 / 擔保 -->
+      <div class="box2">
+        <div class="box2_1">
+          <h3>{{ $t('global.reliable.h3') }}</h3>
+          <p>{{ $t('global.reliable.p') }}</p>
         </div>
-        <div class="box2">
-          <div class="box2_1">
-            <h3>可靠的</h3>
-            <p>
-              核心成員平均有10+年協作技術研發經，聚焦Web3、
-              AI協作算法、安全架構設計等關鍵領域
-            </p>
-          </div>
-          <div class="box2_2">
-            <h3>擔保的</h3>
-            <p>
-              由資安專家與合規顧問組成，涵蓋資料安全、
-              隱私保護與行業合規，遵循GDPR、ISO27001、SOC2等標準
-            </p>
-          </div>
+        <div class="box2_2">
+          <h3>{{ $t('global.guarantee.h3') }}</h3>
+          <p>{{ $t('global.guarantee.p') }}</p>
         </div>
-        <div class="box3">
-          <div class="txt">
-            <h3>全球的</h3>
-            <p>
-              在全球範圍內擁有5000+認證渠道夥伴，構建覆蓋銷售、實施、運維的全鏈路服務網絡
-            </p>
-          </div>
-          <img class="img2" src="@/assets/new/图层 15@2x.png" alt="" />
+      </div>
+
+      <!-- 全球的 -->
+      <div class="box3">
+        <div class="txt">
+          <h3>{{ $t('global.worldwide.h3') }}</h3>
+          <p>{{ $t('global.worldwide.p') }}</p>
         </div>
+        <img class="img2" src="@/assets/new/图层 15@2x.png" alt="" />
       </div>
     </div>
   </div>
+</div>
 </template>
 <style lang="scss" scoped>
 .global {

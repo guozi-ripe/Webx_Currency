@@ -1,62 +1,82 @@
 <template>
   <div class="News">
-    <div class="title">新聞資訊</div>
-    <div class="news_banner">
-      <div class="info">
-        <div class="left">
-          <h2>通往加密貨幣的門戶</h2>
-          <div class="txt">通往加密貨幣的門戶</div>
-          <div class="btn">了解更多资讯</div>
-        </div>
-        <div class="right">
-          <img src="@/assets/new/page11@2x.png" alt="" />
-        </div>
+  <div class="title">{{ $t('News.title') }}</div>
+
+  <div class="news_banner">
+    <div class="info">
+      <div class="left">
+        <h2>{{ $t('News.banner.h2') }}</h2>
+        <div class="txt">{{ $t('News.banner.txt') }}</div>
+        <div class="btn">{{ $t('News.banner.btn') }}</div>
       </div>
-    </div>
-    <div class="news_info">
-      <div class="item">
-        <div class="item_l">
-          <h3>年利率最高可達 10%</h3>
-          <div class="txt">採用“等級升+鎖詹耦放”機制，所有推廣者均為節點</div>
-          <div class="item_b">
-            <div class="btn">加入Webx</div>
-            <div class="btn2">加入Webx</div>
-          </div>
-        </div>
-        <div class="item_r">
-          <img src="@/assets/new/page6@2x.png" alt="" />
-        </div>
-      </div>
-      <div class="item2">
-        <div class="item_r">
-          <img src="@/assets/new/page7@2x.png" alt="" />
-        </div>
-        <div class="item_l">
-          <h3>加密貨幣交易的核心功能</h3>
-          <div class="txt2">
-            能量值具備“”與“制卡”兩大功能。功能允許用戶上傳能量值進行，直接獲取WebX代收益，實現消費價值向數字資產的轉化；制卡功能支持用戶直接將能量值製作成禮品卡，禮品卡可在生熊內流通、消費或轉贈他人，提升能量值的靈活性與實用性，豐富商生熊的支付場景；能量值不設有效期，可長期累，且隨著生熊發展，
-            能量值的應用場景將持續拓展。
-          </div>
-          <div class="item_b">
-            <div class="btn">搜寻加密貨幣</div>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item_l">
-          <h3>多元化你的投資組合</h3>
-          <div class="txt">
-            涵益 Web3 量化、加密、股票、ETF
-            等產品，優選機構對接，提供低風險高回報的理財選擇
-          </div>
-        </div>
-        <div class="item_r">
-          <img src="@/assets/new/page8@2x.png" alt="" />
-        </div>
+      <div class="right">
+        <img src="@/assets/new/page11@2x.png" alt="" />
       </div>
     </div>
   </div>
+
+  <div class="news_info">
+    <!-- 区块 1 -->
+    <div class="item">
+      <div class="item_l">
+        <img src="../../../assets/new/desktop.png" alt="">
+        <!-- <h3>{{ $t('News.item1.h3') }}</h3>
+        <div class="txt">{{ $t('News.item1.txt') }}</div> -->
+        <div class="item_b" v-if="isMobile">
+          <div class="btn">{{ $t('News.item1.btn') }}</div>
+        </div>
+      </div>
+      <div class="item_r">
+        <img src="@/assets/new/page6@2x.png" alt="" />
+      </div>
+    </div>
+
+    <!-- 区块 2 -->
+    <div class="item2">
+      <div class="item_r">
+        <img src="@/assets/new/page7@2x.png" alt="" />
+      </div>
+      <div class="item_l">
+        <h3>{{ $t('News.item2.h3') }}</h3>
+        <div class="txt2">{{ $t('News.item2.txt') }}</div>
+        <div class="item_b">
+          <div class="btn">{{ $t('News.item2.btn') }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 区块 3 -->
+    <div class="item">
+      <div class="item_l">
+        <h3>{{ $t('News.item3.h3') }}</h3>
+        <div class="txt">{{ $t('News.item3.txt') }}</div>
+      </div>
+      <div class="item_r">
+        <img src="@/assets/new/page8@2x.png" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
 </template>
+<script setup>
+import { onMounted, onUnmounted, ref } from 'vue';
+
+  const isMobile = ref(false);
+  // 检测屏幕尺寸
+const checkScreenSize = () => {
+  isMobile.value = window.innerWidth < 960;
+};
+// 生命周期
+onMounted(() => {
+  checkScreenSize();
+  window.addEventListener("resize", checkScreenSize);
+  
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkScreenSize);
+});
+</script>
 <style scoped lang="scss">
 .News {
   .title {
@@ -138,6 +158,21 @@
     max-width: 1200px;
     padding: 40px 24px;
     margin: -50px auto 0;
+    .item .item_l{
+        width: 641px;
+      height: 501px;
+      img {
+        width: 100%;
+        height: 100%;
+        // transition: all 0.4s ease;
+
+        border-radius: 30px;
+        &:hover {
+          transform: scale(1.08);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
     .item .item_r {
       width: 641px;
       height: 501px;
@@ -355,6 +390,21 @@
       max-width: 1200px;
       padding: 40px 34px;
       margin: -50px auto 0;
+      .item .item_l {
+        width: 621px;
+        height: 431px;
+        img {
+          width: 100%;
+          height: 100%;
+          // transition: all 0.4s ease;
+
+          border-radius: 30px;
+          &:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+          }
+        }
+      }
       .item .item_r {
         width: 621px;
         height: 431px;
@@ -607,6 +657,10 @@
         font-size: 20px;
       }
     }
+  }
+  .News .news_info .item .item_l {
+    width: 100%;
+    height: auto;
   }
   .News .news_info .item .item_r {
     width: 100%;

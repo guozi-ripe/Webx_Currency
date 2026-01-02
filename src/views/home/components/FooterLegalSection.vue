@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="copyright">
-        © BingoX Investments Limited. All rights reserved.
+        {{ $t('footer.Copyright') }}
       </div>
     </footer>
   </section>

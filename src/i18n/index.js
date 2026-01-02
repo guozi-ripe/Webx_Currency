@@ -3,8 +3,8 @@ import { ref, inject } from "vue";
 const messages = {
   en: {
     nav: {
-      項目簡介: "Project Overview",
-      項目優勢: "Project Advantages",
+      項目簡介: "Overview",
+      項目優勢: "Advantages",
       生態系統: "Ecosystem",
       團隊背景: "Team Background",
       聯係我們: "Contact Us",
@@ -76,7 +76,90 @@ const messages = {
         privacy: "Privacy Policy",
         terms: "Terms of Use",
       },
+      Copyright:"© BingoX Investments Limited. All rights reserved."
     },
+    Project: {
+      title: "Project Overview",
+
+      "Box1": {
+        "h1_1": "Connecting the World: WebX Mega Consumer Ecosystem",
+        "h3_1": "Chain-Commerce (HK, Vietnam, Indonesia, Malaysia, Dubai, North America…), GameFi, Entertainment, Cross-border (China, Vietnam, Malaysia…), Payments…",
+        "h3_2": "Spend & earn WebX energy, channeling traditional W2 traffic & capital into the W3 realm",
+        "h3_3": "WebX, the native token, empowers suppliers, global consumers, game studios and players to co-create, share and win together",
+        "h1_2": "Token Information",
+        "li1": "Ticker:",
+        "li2": "Chinese Full Name:",
+        "li3": "English Full Name:",
+        "li4": "Total Supply:",
+        "symbol": "WebX",
+        "cnFull": "Global Chain Commerce",
+        "enFull": "WebX Global Chain Commerce",
+        "supply": "1.2 billion (1,200,000,000)"
+      },
+
+      "Box2": {
+        "title_left": "Exchange Listings",
+        "planned": "Planned CEX",
+        "dex": "DEX",
+        "title_right": "Wallet Support",
+        "plannedWallet": "Planned Wallets",
+        "adapted": "Adapted (Testing)"
+      },
+
+      "Box3": {
+        "title_left": "Project Status",
+        "tag1": "Compliance & Transparency",
+        "desc1": "Strictly comply with local regulations",
+        "tag2": "Tech Foundation",
+        "desc2": "Secure & scalable on-chain architecture",
+        "tag3": "Ecosystem Direction",
+        "desc3": "Expand partnerships around chain-commerce use cases",
+        "title_right": "Whitepaper Download",
+        "coming": "The whitepaper is being finalized and reviewed; a link will be provided once the official version is released",
+        "btn": "Coming Soon"
+      },
+
+      "Box4": {
+        "token": "Token",
+        "supply": "Total Supply"
+      }
+    },
+    News: {
+      title: "News & Information",
+
+      banner: {
+        h2: "Gateway to Cryptocurrencies",
+        txt: "Gateway to Cryptocurrencies",
+        btn: "Learn More",
+      },
+
+      item1: {
+        h3: "APY up to 10%",
+        txt: "Tiered + locking mechanism; all promoters act as nodes.",
+        btn: "Join WebX",
+      },
+
+      item2: {
+        h3: "Core Features of Crypto Trading",
+        txt: "Energy value supports both deposit and card-making. Upload energy to earn WebX tokens, turning spending into digital assets; turn energy into gift cards for circulation, payments or gifting—no expiry, ever-expanding use cases.",
+        btn: "Search Crypto",
+      },
+
+      item3: {
+        h3: "Diversify Your Portfolio",
+        txt: "Access Web3 quant, crypto, stocks, ETFs; curated institutional gateways for low-risk, high-return choices.",
+      },
+    },
+    Team: {
+  David:  { desc: 'Blockchain Engineer' },
+  William:{ desc: 'Consensus Algorithm Engineer' },
+  Olivia: { desc: 'Smart-Contract Auditor' },
+  James:  { desc: 'Smart-Contract Engineer' },
+  Daniel: { desc: 'Web3 Backend Engineer' },
+  Mia:    { desc: 'Web3 Visual Designer' },
+  Emma:   { desc: 'Web3 Frontend Engineer' },
+  Michael:{ desc: 'Web3 Product Manager' },
+},
     hello: {
       paragraph: "Network request",
     },
@@ -144,6 +227,32 @@ const messages = {
       title: "Gateway to cryptocurrencies",
       desc: "Get popular crypto assets and start your investment journey.",
       more: "Learn more",
+      title2: 'WebX Partner',
+      desc2: 'Your funds are stored in top-tier institutions'
+    },
+    global: {
+      title: 'Trusted Worldwide',
+      title2: 'Learn why millions of investors from over 100 countries are joining WebX',
+
+      social: {
+        h3: 'Social',
+        p: 'Over 5 billion internet users and an online consumer market exceeding USD 8 trillion.',
+      },
+
+      reliable: {
+        h3: 'Reliable',
+        p: 'Core team averages 10+ years of collaborative R&D in Web3, AI algorithms and security architecture.',
+      },
+
+      guarantee: {
+        h3: 'Assurance',
+        p: 'Security & compliance experts ensure data safety, privacy and regulatory adherence (GDPR, ISO27001, SOC2).',
+      },
+
+      worldwide: {
+        h3: 'Global',
+        p: '5,000+ certified channel partners worldwide covering sales, implementation and operations.',
+      },
     },
     sponsors: {
       title: "Sponsors working with the currency",
@@ -399,7 +508,92 @@ const messages = {
         privacy: "隱私條款",
         terms: "使用條款",
       },
+      Copyright:"© BingoX 投资有限公司。保留所有权利。"
+
     },
+    Project:
+    {
+      "title": "項目概況",
+
+      Box1: {
+        "h1_1": "連結世界 WebX 大消費生態",
+        "h3_1": "鏈商（香港、越南、印尼、馬來西亞、迪拜、北美…）、鏈遊、文娛、跨境（中國、越南、馬來西亞…）、支付…",
+        "h3_2": "消費獲得 WebX 能量貢獻，協助 W2 傳統流量與資金進入 W3 領域",
+        "h3_3": "WebX 主幣作為生態主幣，助力供應鏈商家、全球消費用戶、遊戲廠商、遊戲玩家等共創共享、共贏",
+        "h1_2": "代幣資訊",
+        "li1": "幣符：",
+        "li2": "中文全稱：",
+        "li3": "英文全稱：",
+        "li4": "代幣發行量：",
+        "symbol": "WebX",
+        "cnFull": "全球鏈商",
+        "enFull": "WebX Global Chain Commerce",
+        "supply": "12億 (1,200,000,000)"
+      },
+
+      Box2: {
+        "title_left": "交易所收錄",
+        "planned": "計劃對接",
+        "dex": "DEX",
+        "title_right": "錢包收錄",
+        "plannedWallet": "計劃支持",
+        "adapted": "已適配（測試）"
+      },
+
+      Box3: {
+        "title_left": "項目基本情況",
+        "tag1": "合規與透明",
+        "desc1": "嚴格遵循所在法域的合規要求",
+        "tag2": "技術基礎",
+        "desc2": "以安全、可擴展的鏈上架構為核心",
+        "tag3": "生態走向",
+        "desc3": "圍繞鏈商應用場景，逐步拓展合作",
+        "title_right": "白皮書下載",
+        "coming": "白皮書正在整理與審閱，暫提供白皮書連結，正式版本發布後可直接下載",
+        "btn": "即將推出"
+      },
+
+      Box4: {
+        "token": "代幣",
+        "supply": "發行量"
+      }
+    },
+    News: {
+      title: "新聞資訊",
+
+      banner: {
+        h2: "通往加密貨幣的門戶",
+        txt: "通往加密貨幣的門戶",
+        btn: "了解更多資訊",
+      },
+
+      item1: {
+        h3: "年利率最高可達 10%",
+        txt: "採用「等級升 + 鎖倉釋放」機制，所有推廣者均為節點。",
+        btn: "加入 WebX",
+      },
+
+      item2: {
+        h3: "加密貨幣交易的核心功能",
+        txt: "能量值具備「儲值」與「制卡」兩大功能。儲值功能允許用戶上傳能量值直接獲取 WebX 代幣收益，實現消費價值向數位資產的轉化；制卡功能支援用戶將能量值製作成禮品卡，禮品卡可在生態內流通、消費或轉贈他人，能量值不設有效期，可長期累積，應用場景持續拓展。",
+        btn: "搜尋加密貨幣",
+      },
+
+      item3: {
+        h3: "多元化你的投資組合",
+        txt: "涵蓋 Web3 量化、加密、股票、ETF 等產品，優選機構對接，提供低風險高回報的理財選擇。",
+      },
+    },
+    Team: {
+  David:  { desc: '區塊鏈工程師' },
+  William:{ desc: '共識算法工程師' },
+  Olivia: { desc: '智能合約審計師' },
+  James:  { desc: '智能合約工程師' },
+  Daniel: { desc: 'Web3 後端工程師' },
+  Mia:    { desc: 'Web3 視覺設計師' },
+  Emma:   { desc: 'Web3 前端工程師' },
+  Michael:{ desc: 'Web3 產品經理' },
+},
     hello: {
       paragraph: "網絡請求",
     },
@@ -417,6 +611,32 @@ const messages = {
       title: "通往加密貨幣的門戶",
       desc: "獲取熱門加密資產，開啟投資未來之路。",
       more: "了解更多資訊",
+      title2: 'WebX合作夥伴',
+      desc2: '你的資金存放在頂級機構'
+    },
+    global: {
+      title: '全球信賴的',
+      title2: '了解為什麼來自 100 多個國家的數百萬投資者加入 WebX',
+
+      social: {
+        h3: '社會的',
+        p: '目前全球互聯網用戶規模已突破 50 億，線上消費市場規模超過 8 兆美元。',
+      },
+
+      reliable: {
+        h3: '可靠的',
+        p: '核心成員平均有 10+ 年協作技術研發經驗，聚焦 Web3、AI 協作算法、安全架構設計等關鍵領域。',
+      },
+
+      guarantee: {
+        h3: '擔保的',
+        p: '由資安專家與合規顧問組成，涵蓋資料安全、隱私保護與行業合規，遵循 GDPR、ISO27001、SOC2 等標準。',
+      },
+
+      worldwide: {
+        h3: '全球的',
+        p: '在全球範圍內擁有 5,000+ 認證渠道夥伴，構建覆蓋銷售、實施、運維的全鏈路服務網絡。',
+      },
     },
     sponsors: {
       title: "與貨幣合作的贊助商",

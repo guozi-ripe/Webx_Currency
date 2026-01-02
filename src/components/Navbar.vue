@@ -152,10 +152,10 @@ onUnmounted(() => {
 
       <div class="actions" @click="toggleLang">
         <div v-if="isEn == true">
-          <img src="@/assets/home/中.png" alt="" />
+          <img src="../assets/new/cn.svg" alt="" />
         </div>
         <div v-else>
-          <img src="@/assets/home/EN .png" alt="" />
+          <img src="../assets/new/en.svg" alt="" />
         </div>
       </div>
     </div>

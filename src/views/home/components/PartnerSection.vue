@@ -7,9 +7,9 @@
     :style="{ '--section-index': 6 }"
   >
     <div class="title">
-      <div>WebX合作伙伴</div>
+      <div>{{$t('promo.title2')}}</div>
     </div>
-    <div class="txt">你的資金存放在頂級機構</div>
+    <div class="txt">{{$t('promo.desc2')}}</div>
 
     <!-- 内容 - 优化后的走马灯 -->
     <div class="scroll-container">
