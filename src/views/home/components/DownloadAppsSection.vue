@@ -136,10 +136,10 @@
           <template v-else-if="i === 10">
             <ul class="list bullets">
               <li>{{ $t('docs.content.contact.site') }}<a class="link" href="https://WebX.co" target="_blank"
-                  rel="noopener">WebX.co</a></li>
-              <li>{{ $t('docs.content.contact.phone') }}</li>
+                  rel="noopener">WebX.com</a></li>
+              <!-- <li>{{ $t('docs.content.contact.phone') }}</li>
               <li>{{ $t('docs.content.contact.telegram') }}</li>
-              <li>{{ $t('docs.content.contact.email') }}</li>
+              <li>{{ $t('docs.content.contact.email') }}</li> -->
             </ul>
             <div class="qr-grid">
               <div class="qr-card">
