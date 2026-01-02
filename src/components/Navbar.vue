@@ -152,10 +152,10 @@ onUnmounted(() => {
 
       <div class="actions" @click="toggleLang">
         <div v-if="isEn == true">
-          <img src="../assets/new/cn.svg" alt="" />
+          <img src="@/assets/new/cn.svg" alt="" />
         </div>
         <div v-else>
-          <img src="../assets/new/en.svg" alt="" />
+          <img src="@/assets/new/en.svg" alt="" />
         </div>
       </div>
     </div>
@@ -348,13 +348,19 @@ body {
   color: var(--color-primary);
 }
 
+
 .actions {
   display: flex;
   align-items: center;
   gap: 10px;
-
-  .text {
-    color: var(--color-bg);
+  flex-shrink: 0;   // 防止被中间挤扁
+  width: 35px;      // 足够点击区域
+  height: 35px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
