@@ -3,32 +3,67 @@
     <div class="Project">
       <!-- 頂目概况 -->
       <div class="container">
-        <div class="title">{{ $t('Project.title') }}</div>
+        <div class="title">{{ $t("Project.title") }}</div>
         <div class="box_item1">
-          <div class="left">
-            <h1>{{ $t('Project.Box1.h1_1') }}</h1>
-            <h3>{{ $t('Project.Box1.h3_1') }}</h3>
-            <h3>{{ $t('Project.Box1.h3_2') }}</h3>
-            <h3>{{ $t('Project.Box1.h3_3') }}</h3>
+          <div class="top">
+            <h1>{{ $t("Project.Box1.h1_1") }}</h1>
+            <h3>
+              <strong>{{ $t("Project.Box1.h3_1") }}</strong
+              >{{ $t("Project.Box1.h3_1_s")
+              }}<strong>{{ $t("Project.Box1.h3_1_s_2") }}</strong
+              >{{ $t("Project.Box1.h3_1_3")
+              }}<strong>{{ $t("Project.Box1.h3_1_s_3") }}</strong>
+            </h3>
+            <h3>
+              <strong>{{ $t("Project.Box1.h3_2") }}</strong
+              >{{ $t("Project.Box1.h3_2_s")
+              }}<strong>{{ $t("Project.Box1.h3_2_s_2") }}</strong
+              >{{ $t("Project.Box1.h3_2_s_3")
+              }}<strong>{{ $t("Project.Box1.h3_2_s_4") }}</strong
+              >{{ $t("Project.Box1.h3_2_s_5")
+              }}<strong>{{ $t("Project.Box1.h3_2_s_6") }}</strong>
+              {{ $t("Project.Box1.h3_2_s_7") }}
+            </h3>
 
-            <h1>{{ $t('Project.Box1.h1_2') }}</h1>
-            <ul>
-              <li><span>{{ $t('Project.Box1.li1') }}</span>{{ $t('Project.Box1.symbol') }}</li>
-              <li><span>{{ $t('Project.Box1.li2') }}</span>{{ $t('Project.Box1.cnFull') }}</li>
-              <li><span>{{ $t('Project.Box1.li3') }}</span>{{ $t('Project.Box1.enFull') }}</li>
-              <li><span>{{ $t('Project.Box1.li4') }}</span>{{ $t('Project.Box1.supply') }}</li>
-            </ul>
+            <h3>
+              <strong>{{ $t("Project.Box1.h3_3") }}</strong
+              >{{ $t("Project.Box1.h3_3_1") }}
+            </h3>
+            <h3>{{ $t("Project.Box1.h3_4") }}</h3>
           </div>
-          <div class="right">
-            <img src="@/assets/new/page1@2x.png" alt="" />
+          <div class="box_item1_c">
+            <div class="left">
+              <h1>{{ $t("Project.Box1.h1_2") }}</h1>
+              <ul>
+                <li>
+                  <span>{{ $t("Project.Box1.li1") }}</span
+                  >{{ $t("Project.Box1.symbol") }}
+                </li>
+                <li>
+                  <span>{{ $t("Project.Box1.li2") }}</span
+                  >{{ $t("Project.Box1.cnFull") }}
+                </li>
+                <li>
+                  <span>{{ $t("Project.Box1.li3") }}</span
+                  >{{ $t("Project.Box1.enFull") }}
+                </li>
+                <li>
+                  <span>{{ $t("Project.Box1.li4") }}</span
+                  >{{ $t("Project.Box1.supply") }}
+                </li>
+              </ul>
+            </div>
+            <div class="right">
+              <img src="@/assets/new/page1@2x.png" alt="" />
+            </div>
           </div>
         </div>
         <div class="box_item2">
           <div class="left">
-            <h1>{{ $t('Project.Box2.title_left') }}</h1>
+            <h1>{{ $t("Project.Box2.title_left") }}</h1>
             <div class="item">
               <div class="box1">
-                <h3>{{ $t('Project.Box2.planned') }}</h3>
+                <h3>{{ $t("Project.Box2.planned") }}</h3>
                 <div class="info">
                   <div>
                     <img src="@/assets/new/Binance@2x.png" alt="" />
@@ -53,7 +88,7 @@
                 </div>
               </div>
               <div class="box2">
-                <h3>{{ $t('Project.Box2.dex') }}</h3>
+                <h3>{{ $t("Project.Box2.dex") }}</h3>
                 <div class="info">
                   <div>
                     <img src="@/assets/new/PancakeSwap@2x.png" alt="" />
@@ -72,10 +107,10 @@
             </div>
           </div>
           <div class="right">
-            <h1>{{ $t('Project.Box2.title_right') }}</h1>
+            <h1>{{ $t("Project.Box2.title_right") }}</h1>
             <div class="item">
               <div class="box1">
-                <h3>{{ $t('Project.Box2.plannedWallet') }}</h3>
+                <h3>{{ $t("Project.Box2.plannedWallet") }}</h3>
                 <div class="info">
                   <div>
                     <img src="@/assets/new/OKX Wallet@2x.png" alt="" />
@@ -101,7 +136,7 @@
                 </div>
               </div>
               <div class="box2">
-                <h3>{{ $t('Project.Box2.adapted') }}</h3>
+                <h3>{{ $t("Project.Box2.adapted") }}</h3>
                 <div class="info">
                   <div>
                     <img src="../../../assets//new/imtoken logo.png" alt="" />
@@ -129,42 +164,42 @@
           <div class="left">
             <div class="box">
               <div>
-                <h1>{{ $t('Project.Box3.title_left') }}</h1>
+                <h1>{{ $t("Project.Box3.title_left") }}</h1>
                 <div class="info">
-                  <div class="txt">{{ $t('Project.Box3.tag1') }}</div>
-                  <div class="item">{{ $t('Project.Box3.desc1') }}</div>
+                  <div class="txt">{{ $t("Project.Box3.tag1") }}</div>
+                  <div class="item">{{ $t("Project.Box3.desc1") }}</div>
                 </div>
                 <div class="info">
-                  <div class="txt">{{ $t('Project.Box3.tag2') }}</div>
-                  <div class="item">{{ $t('Project.Box3.desc2') }}</div>
+                  <div class="txt">{{ $t("Project.Box3.tag2") }}</div>
+                  <div class="item">{{ $t("Project.Box3.desc2") }}</div>
                 </div>
                 <div class="info">
-                  <div class="txt">{{ $t('Project.Box3.tag2') }}</div>
-                  <div class="item">{{ $t('Project.Box3.desc2') }}</div>
+                  <div class="txt">{{ $t("Project.Box3.tag2") }}</div>
+                  <div class="item">{{ $t("Project.Box3.desc2") }}</div>
                 </div>
               </div>
               <img src="@/assets/new/page3@2x.png" alt="" />
             </div>
           </div>
           <div class="right">
-            <h1>{{ $t('Project.Box3.title_right') }}</h1>
+            <h1>{{ $t("Project.Box3.title_right") }}</h1>
             <div class="item">
-              {{ $t('Project.Box3.coming') }}
-            <div class="btn"> {{ $t('Project.Box3.btn') }}</div>
-            <div class="image">
-              <img src="@/assets/new/page2@2x.png" alt="" />
+              {{ $t("Project.Box3.coming") }}
+              <div class="btn">{{ $t("Project.Box3.btn") }}</div>
+              <div class="image">
+                <img src="@/assets/new/page2@2x.png" alt="" />
+              </div>
             </div>
           </div>
-        </div>
         </div>
         <div class="box_item4">
           <div class="box">
             <h3>WebX</h3>
-            <h5>{{ $t('Project.Box4.token') }}</h5>
+            <h5>{{ $t("Project.Box4.token") }}</h5>
           </div>
           <div class="box">
             <h3>1200M</h3>
-            <h5>{{ $t('Project.Box4.supply') }}</h5>
+            <h5>{{ $t("Project.Box4.supply") }}</h5>
           </div>
         </div>
       </div>
@@ -186,27 +221,32 @@
   }
 
   .box_item1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: auto;
-    gap: 109px;
     background: #e5f6fe;
     border-radius: 20px;
+    .box_item1_c {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: auto;
+      gap: 80px;
+      padding: 0 36px 0;
+    }
+    .top {
+      padding: 36px 36px 1px;
+    }
+    h1 {
+      font-weight: bold;
+      font-size: 36px;
+      color: #000000;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-size: 24px;
+    }
 
     .left {
-      padding: 80px 36px 36px;
-
-      h1 {
-        font-weight: bold;
-        font-size: 36px;
-        color: #000000;
-      }
-
-      h3 {
-        font-weight: 400;
-        font-size: 24px;
-      }
+      padding-bottom: 91px;
 
       ul {
         padding-inline-start: 0;
@@ -218,9 +258,10 @@
         font-weight: 600;
         font-size: 26px;
         color: #000000;
-        white-space: wrap;
-        max-width: 500px;
-        overflow-wrap: break-word;
+        white-space: nowrap;
+        // white-space: wrap;
+        // max-width: 600px;
+        // overflow-wrap: break-word;
 
         span {
           font-weight: 200;
@@ -229,13 +270,12 @@
     }
 
     .right {
-
-      padding: 34px 34px 0;
+      padding: 4px 34px 0;
     }
 
     img {
-      width: 730px;
-      height: 528px;
+      width: 581px;
+      height: 428px;
     }
   }
 
@@ -279,7 +319,7 @@
           height: 33px;
         }
 
-        >div {
+        > div {
           display: flex;
           gap: 6px;
           align-items: center;
@@ -371,7 +411,7 @@
 
       .btn {
         width: 100%;
-       max-width: 220px;
+        max-width: 220px;
         height: 51px;
         background: #003baf;
         border-radius: 14px;
@@ -380,6 +420,7 @@
         line-height: 50px;
         color: #ffffff;
         text-align: center;
+        margin-top: 56px;
       }
 
       .image {
@@ -429,34 +470,67 @@
   }
 }
 
+// 平板
+@media (max-width: 1024px) {
+  .Project {
+    padding: 0 20px;
+    .box_item1 {
+      display: block;
+      .box_item1_c {
+        display: block;
+        padding: 0 30px;
+        gap: 0;
+      }
+    }
+    .box_item2 {
+      display: block;
+      margin: 19px 0;
+      .left,
+      .right {
+        width: auto; /* 或者 100%，看你布局需要 */
+        height: auto;
+        background: #e5f6fe;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+    }
+    .box_item3 {
+      display: block;
+      .left,
+      .right {
+        width: auto; /* 或者 100%，看你布局需要 */
+        height: auto;
+        background: #e5f6fe;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+    }
+  }
+}
 // 小尺寸pc端
 @media (max-width: 1440px) and (min-width: 1025px) {
   .container {
     padding: 40px 54px;
   }
-
   .Project .box_item1 .right {
-    padding: 24px 5px 0;
+    padding: 14px 5px 0;
   }
 }
 
-// 
+//
 
 @media screen and (max-width: 768px) {
-
   // 添加盒模型统一设置
   .Project {
     box-sizing: border-box;
-
-    * {
-      box-sizing: border-box;
-    }
 
     padding: 15px 10px;
     margin: 30px auto;
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden; // 防止水平滚动
+    overflow-x: hidden;
 
     .title {
       font-size: 24px;
@@ -479,22 +553,22 @@
     }
 
     .box_item1 {
-      display: block;
+      .box_item1_c {
+        display: block;
+      }
+      h1 {
+        font-size: 24px;
+      }
 
+      h3 {
+        font-size: 20px;
+        // 一行显示19个字符
+        white-space: wrap;
+        max-width: 500px;
+        overflow-wrap: break-word;
+      }
       .left {
         width: 100%;
-
-        h1 {
-          font-size: 24px;
-        }
-
-        h3 {
-          font-size: 20px;
-          // 一行显示19个字符
-          white-space: wrap;
-          max-width: 500px;
-          overflow-wrap: break-word;
-        }
 
         ul li {
           font-size: 16px;
@@ -535,7 +609,7 @@
         .info {
           width: 100%;
 
-          >div {
+          > div {
             flex-wrap: wrap;
           }
         }
@@ -626,7 +700,7 @@
   }
 
   .Project .box_item1 .left {
-    padding: 50px 26px 36px;
+    padding: 50px 0px 36px;
   }
 }
 </style>

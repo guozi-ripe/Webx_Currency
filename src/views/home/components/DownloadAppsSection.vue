@@ -175,7 +175,7 @@ const open = ref(0)
 function toggle(i) { open.value = open.value === i ? -1 : i }
 function pad(n) { return String(n).padStart(2, '0') }
 function anchorId(i) { return i === 8 ? 'team' : (i === 10 ? 'contact' : null) }
-function syncFromHash() {
+function syncFromHash() { 
   const h = typeof window !== 'undefined' ? window.location.hash : ''
   if (h === '#team') open.value = 8
   if (h === '#contact') open.value = 10

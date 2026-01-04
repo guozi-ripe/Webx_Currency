@@ -1,68 +1,63 @@
 <template>
   <div class="News">
-  <div class="title">{{ $t('News.title') }}</div>
+    <div class="title">{{ $t("News.title") }}</div>
 
-  <div class="news_banner">
-    <div class="info">
-      <div class="left">
-        <h2>{{ $t('News.banner.h2') }}</h2>
-        <div class="txt">{{ $t('News.banner.txt') }}</div>
-        <div class="btn">{{ $t('News.banner.btn') }}</div>
-      </div>
-      <div class="right">
-        <img src="@/assets/new/page11@2x.png" alt="" />
-      </div>
-    </div>
-  </div>
-
-  <div class="news_info">
-    <!-- 区块 1 -->
-    <div class="item">
-      <div class="item_l">
-        <img src="../../../assets/new/desktop.png" alt="">
-        <!-- <h3>{{ $t('News.item1.h3') }}</h3>
-        <div class="txt">{{ $t('News.item1.txt') }}</div> -->
-        <div class="item_b" v-if="isMobile">
-          <div class="btn">{{ $t('News.item1.btn') }}</div>
+    <div class="news_banner">
+      <div class="info">
+        <div class="left">
+          <h2>{{ $t("News.banner.h2") }}</h2>
+          <div class="txt">{{ $t("News.banner.txt") }}</div>
+          <div class="btn">{{ $t("News.banner.btn") }}</div>
         </div>
-      </div>
-      <div class="item_r">
-        <img src="@/assets/new/page6@2x.png" alt="" />
-      </div>
-    </div>
-
-    <!-- 区块 2 -->
-    <div class="item2">
-      <div class="item_r">
-        <img src="@/assets/new/page7@2x.png" alt="" />
-      </div>
-      <div class="item_l">
-        <h3>{{ $t('News.item2.h3') }}</h3>
-        <div class="txt2">{{ $t('News.item2.txt') }}</div>
-        <div class="item_b">
-          <div class="btn">{{ $t('News.item2.btn') }}</div>
+        <div class="right">
+          <img src="@/assets/new/page11@2x.png" alt="" />
         </div>
       </div>
     </div>
 
-    <!-- 区块 3 -->
-    <div class="item">
-      <div class="item_l">
-        <h3>{{ $t('News.item3.h3') }}</h3>
-        <div class="txt">{{ $t('News.item3.txt') }}</div>
+    <div class="news_info">
+      <!-- 区块 1 -->
+      <div class="item1">
+        <div class="item_l">
+          <img src="../../../assets/new/desktop.png" alt="" />
+        </div>
+        <div class="item_r">
+          <img src="@/assets/new/page6@2x.png" alt="" />
+        </div>
       </div>
-      <div class="item_r">
-        <img src="@/assets/new/page8@2x.png" alt="" />
+
+      <!-- 区块 2 -->
+      <div class="item2">
+        <div class="item_r">
+          <img src="@/assets/new/page7@2x.png" alt="" />
+        </div>
+        <div class="item_l">
+          <h3>{{ $t("News.item2.h3") }}</h3>
+          <div class="txt2">{{ $t("News.item2.txt") }}</div>
+          <div class="item_b">
+            <div class="btn">{{ $t("News.item2.btn") }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 区块 3 -->
+      <div class="item">
+        <div class="item_l">
+          <h3>{{ $t("News.item3.h3") }}</h3>
+          <div class="txt">{{ $t("News.item3.txt") }}</div>
+        </div>
+        <div class="item_r">
+          <img src="@/assets/new/page8@2x.png" alt="" />
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from "vue";
 
-  const isMobile = ref(false);
-  // 检测屏幕尺寸
+const isMobile = ref(false);
+// 检测屏幕尺寸
 const checkScreenSize = () => {
   isMobile.value = window.innerWidth < 960;
 };
@@ -70,7 +65,6 @@ const checkScreenSize = () => {
 onMounted(() => {
   checkScreenSize();
   window.addEventListener("resize", checkScreenSize);
-  
 });
 
 onUnmounted(() => {
@@ -158,9 +152,13 @@ onUnmounted(() => {
     max-width: 1200px;
     padding: 40px 24px;
     margin: -50px auto 0;
-    .item .item_l{
-        width: 641px;
-      height: 501px;
+    .item1 {
+      display: flex;
+      justify-content: space-between;
+      gap: 41px;
+      margin-bottom: 143px;
+      margin-top: 22px;
+      cursor: pointer;
       img {
         width: 100%;
         height: 100%;
@@ -183,6 +181,7 @@ onUnmounted(() => {
 
         border-radius: 30px;
         &:hover {
+          cursor: pointer;
           transform: scale(1.08);
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
@@ -198,6 +197,7 @@ onUnmounted(() => {
 
         border-radius: 30px;
         &:hover {
+          cursor: pointer;
           transform: scale(1.08);
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
@@ -310,6 +310,21 @@ onUnmounted(() => {
     }
   }
 }
+// 平板
+@media (max-width: 1024px) {
+  .News .news_info .item1,.News .news_info .item{
+    display: block;
+    img{
+      padding: 20px 0;
+    }
+  }
+  .News .news_info .item2{
+    display: block;
+    h3{
+      padding: 10px 0;
+    }
+  }
+}
 // 小尺寸pc端
 @media (max-width: 1440px) and (min-width: 1025px) {
   .News {
@@ -390,6 +405,7 @@ onUnmounted(() => {
       max-width: 1200px;
       padding: 40px 34px;
       margin: -50px auto 0;
+     
       .item .item_l {
         width: 621px;
         height: 431px;
@@ -590,9 +606,18 @@ onUnmounted(() => {
       }
     }
     .news_info {
+      .item1 {
+        display: block;
+
+        .item_l {
+          margin: 20px 0 0;
+          padding: 30px 0;
+        }
+      }
       .item {
         display: block;
         margin: 100px 0;
+
         .item_b {
           display: block;
           margin-top: 74px;
