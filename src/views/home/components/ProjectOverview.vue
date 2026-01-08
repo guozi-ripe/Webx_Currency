@@ -519,8 +519,6 @@
   }
 }
 
-//
-
 @media screen and (max-width: 768px) {
   // 添加盒模型统一设置
   .Project {
@@ -590,8 +588,8 @@
 
       .left,
       .right {
-        width: 100% !important;
-        max-width: 100%;
+        // width: 100% !important;
+        // max-width: 100%;
         padding: 20px;
         margin: 10px 0;
       }
@@ -623,8 +621,8 @@
 
       .left,
       .right {
-        width: 100% !important;
-        max-width: 100%;
+        // width: 100% !important;
+        // max-width: 100%;
         padding: 20px;
       }
 
@@ -676,16 +674,16 @@
     }
 
     .box_item4 {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-
+      // display: flex;
+      // flex-direction: column;
+      // gap: 15px;
+      display: block;
       .box {
-        width: 100% !important;
-        max-width: 100%;
+        width: auto !important; // ✅ 用 auto 覆盖 100%
+        max-width: none;
         height: auto;
         padding: 30px 20px;
-        margin: 10px 0;
+        margin: 10px auto;
 
         h3 {
           font-size: 36px;
