@@ -679,7 +679,7 @@
       // gap: 15px;
       display: block;
       .box {
-        width: auto !important; // ✅ 用 auto 覆盖 100%
+        width: auto !important;
         max-width: none;
         height: auto;
         padding: 30px 20px;

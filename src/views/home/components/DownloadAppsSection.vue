@@ -136,7 +136,7 @@
           <template v-else-if="i === 10">
             <ul class="list bullets">
               <li>{{ $t('docs.content.contact.site') }}<a class="link" href="https://WebX.co" target="_blank"
-                  rel="noopener">WebX.com</a></li>
+                  rel="noopener">WebX.co</a></li>
               <!-- <li>{{ $t('docs.content.contact.phone') }}</li>
               <li>{{ $t('docs.content.contact.telegram') }}</li>
               <li>{{ $t('docs.content.contact.email') }}</li> -->
@@ -154,12 +154,12 @@
                   <img src="../../../assets/telegram.png" alt=""></img>
                 </div>
               </div>
-              <div class="qr-card">
+              <!-- <div class="qr-card">
                 <div class="qr-title">WeChat 官方賬號</div>
                 <div class="qr-box">
                   <img src="../../../assets/wechat.png" alt=""></img>
                 </div>
-              </div>
+              </div> -->
             </div>
           </template>
         </div>
