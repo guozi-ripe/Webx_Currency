@@ -11,7 +11,7 @@
     <!-- 項目摘要 -->
     <DownloadAppsSection />
     <!-- 團隊背景 -->
-    <SponsorsSection />
+    <!-- <SponsorsSection /> -->
   </div>
 </template>
 

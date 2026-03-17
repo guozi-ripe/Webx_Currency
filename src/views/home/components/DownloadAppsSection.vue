@@ -31,7 +31,7 @@
             <ul class="list bullets">
               <li>{{ $t('docs.content.mission.core.industry') }}</li>
               <li>{{ $t('docs.content.mission.core.global') }}</li>
-              <li>{{ $t('docs.content.mission.core.equity') }}</li>
+              <!-- <li>{{ $t('docs.content.mission.core.equity') }}</li> -->
               <li>{{ $t('docs.content.mission.core.lowbarrier') }}</li>
             </ul>
           </template>
@@ -141,7 +141,7 @@
               <li>{{ $t('docs.content.contact.telegram') }}</li>
               <li>{{ $t('docs.content.contact.email') }}</li> -->
             </ul>
-            <div class="qr-grid">
+            <div class="qr-grid" v-if="!isMobile">
               <div class="qr-card">
                 <div class="qr-title">Twitter</div>
                 <div class="qr-box">
@@ -180,13 +180,24 @@ function syncFromHash() {
   if (h === '#team') open.value = 8
   if (h === '#contact') open.value = 10
 }
+// 移动端开关
+const isMobile = ref(false)
+
 onMounted(() => {
   syncFromHash()
   window.addEventListener('hashchange', syncFromHash)
+  // 检测到移动端要刷新
+  if (window.innerWidth < 768) {
+    window.location.hash = ''
+  }
+  isMobile.value = window.innerWidth < 768
 })
 onBeforeUnmount(() => {
   window.removeEventListener('hashchange', syncFromHash)
 })
+
+
+
 </script>
 
 <style scoped lang="scss">

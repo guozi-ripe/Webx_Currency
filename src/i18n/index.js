@@ -15,7 +15,7 @@ const messages = {
       sub: "We follow openness, transparency and compliance to launch WEBX digital assets, empowering the construction and growth of the global chain-commerce ecosystem.",
       join: "Join WebX",
       ctaPrimary: "View token info",
-      ctaSecondary: "Contact project team",
+      ctaSecondary: "Contact Us",
       stats: {
         rating: "4.8/5 on Trustpilot",
         investors: "3M+ investors",
@@ -294,7 +294,7 @@ const messages = {
         n3: "WebX vision and mission",
         n4: "Five-position model & triangle closed loop",
         n5: "Core modules in the ecosystem",
-        n6: "Common-stock linkage fund structure",
+        n6: "Fund Architecture",
         n7: "Technical architecture and security",
         n8: "Global roadmap and landing",
         n9: "Core team and partners",
@@ -380,7 +380,7 @@ const messages = {
           base: {
             title: "5.3.1 Basic info",
             ticker: "Token: WEBX (WX)",
-            supply: "Supply: 2.1B, non-inflationary",
+            supply: "Supply: 2.1B",
             issue: "Issued by Dubai entity; compliant, segregated operations",
             flow: "Trading: listed on PancakeSwap; supports BNB/USDT; 5% redemption to energy safeguard",
           },
@@ -400,7 +400,7 @@ const messages = {
           title: "7. Technology & security",
           infra: "BSC high-performance network and high-throughput processing",
           contracts: "Smart contracts ensure transparency and immutability",
-          compat: "Cross-compatibility towards Ethereum/Polygon etc.",
+          compat: "Cross-compatibility towards Ethereum etc.",
         },
         strategy: {
           core: "8.1 Core strategy: HK-centered, radiate Asia, connect globally",
@@ -464,7 +464,7 @@ const messages = {
       sub: "我們以開放、透明與合規為原則，推出 WEBX 數位資產，助力全球鏈商生態的建設與發展。",
       join: "加入 WebX",
       ctaPrimary: "查看代幣資訊",
-      ctaSecondary: "聯繫項目方",
+      ctaSecondary: "聯係我們",
       stats: {
         rating: "WEBX 代币",
         investors: "1200M+ 发行量",
@@ -685,7 +685,7 @@ const messages = {
         n3: "WebX 核心願景與使命",
         n4: "五位耦金融模型與三角融合閉環",
         n5: "生態核心模塊詳解",
-        n6: "常股聯動基金體系結構",
+        n6: "體系結構",
         n7: "技術架構與安全保障",
         n8: "全球發展規劃與落地路徑",
         n9: "核心團隊與合作夥伴",
@@ -764,7 +764,7 @@ const messages = {
           base: {
             title: "5.3.1 基礎信息",
             ticker: "代幣：WEBX（WX）",
-            supply: "總量：12 億，恆定不增發",
+            supply: "總量：12 億",
             issue: "發行：迪拜主體獨立發行，合規隔離運營",
             flow: "交易：PancakeSwap 上線，支持 BNB/USDT；兌換收取 5% 用於生態能量護航",
           },
@@ -783,7 +783,7 @@ const messages = {
           title: "7. 技術架構與安全保障",
           infra: "底層基礎設施：基於 BSC 的高性能鏈上網路與高併發交易處理。",
           contracts: "智慧合約：核心業務透明上鏈，確保合規與不可篡改。",
-          compat: "跨鏈兼容：面向以太坊、Polygon 等互通。",
+          compat: "跨鏈兼容：面向以太坊等互通。",
         },
         strategy: {
           core: "8.1 核心戰略布局：立足香港、輻射亞洲、連接全球",
