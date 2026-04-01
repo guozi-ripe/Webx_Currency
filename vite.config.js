@@ -4,7 +4,7 @@ import vue from "@vitejs/plugin-vue";
 import postcssPxtorem from "postcss-pxtorem";
 import path from "path";
 export default defineConfig({
-  base: "/test/",
+  base: "/",
   plugins: [vue()],
   server: {
     host: "0.0.0.0",

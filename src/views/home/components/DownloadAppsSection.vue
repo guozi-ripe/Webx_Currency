@@ -137,10 +137,7 @@
             <ul class="list bullets">
               <li>{{ $t('docs.content.contact.site') }}<a class="link" href="https://WebX.co" target="_blank"
                   rel="noopener">WebX.co</a></li>
-              <!-- <li>{{ $t('docs.content.contact.phone') }}</li>
-              <li>{{ $t('docs.content.contact.telegram') }}</li>
-              <li>{{ $t('docs.content.contact.email') }}</li> -->
-            </ul>
+              </ul>
             <div class="qr-grid" v-if="!isMobile">
               <div class="qr-card">
                 <div class="qr-title">Twitter</div>

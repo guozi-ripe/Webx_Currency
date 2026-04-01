@@ -8,26 +8,20 @@
           <div class="top">
             <h1>{{ $t("Project.Box1.h1_1") }}</h1>
             <h3>
-              <strong>{{ $t("Project.Box1.h3_1") }}</strong
-              >{{ $t("Project.Box1.h3_1_s")
-              }}<strong>{{ $t("Project.Box1.h3_1_s_2") }}</strong
-              >{{ $t("Project.Box1.h3_1_3")
+              <strong>{{ $t("Project.Box1.h3_1") }}</strong>{{ $t("Project.Box1.h3_1_s")
+              }}<strong>{{ $t("Project.Box1.h3_1_s_2") }}</strong>{{ $t("Project.Box1.h3_1_3")
               }}<strong>{{ $t("Project.Box1.h3_1_s_3") }}</strong>
             </h3>
             <h3>
-              <strong>{{ $t("Project.Box1.h3_2") }}</strong
-              >{{ $t("Project.Box1.h3_2_s")
-              }}<strong>{{ $t("Project.Box1.h3_2_s_2") }}</strong
-              >{{ $t("Project.Box1.h3_2_s_3")
-              }}<strong>{{ $t("Project.Box1.h3_2_s_4") }}</strong
-              >{{ $t("Project.Box1.h3_2_s_5")
+              <strong>{{ $t("Project.Box1.h3_2") }}</strong>{{ $t("Project.Box1.h3_2_s")
+              }}<strong>{{ $t("Project.Box1.h3_2_s_2") }}</strong>{{ $t("Project.Box1.h3_2_s_3")
+              }}<strong>{{ $t("Project.Box1.h3_2_s_4") }}</strong>{{ $t("Project.Box1.h3_2_s_5")
               }}<strong>{{ $t("Project.Box1.h3_2_s_6") }}</strong>
               {{ $t("Project.Box1.h3_2_s_7") }}
             </h3>
 
             <h3>
-              <strong>{{ $t("Project.Box1.h3_3") }}</strong
-              >{{ $t("Project.Box1.h3_3_1") }}
+              <strong>{{ $t("Project.Box1.h3_3") }}</strong>{{ $t("Project.Box1.h3_3_1") }}
             </h3>
             <h3>{{ $t("Project.Box1.h3_4") }}</h3>
           </div>
@@ -36,20 +30,16 @@
               <h1>{{ $t("Project.Box1.h1_2") }}</h1>
               <ul>
                 <li>
-                  <span>{{ $t("Project.Box1.li1") }}</span
-                  >{{ $t("Project.Box1.symbol") }}
+                  <span>{{ $t("Project.Box1.li1") }}</span>{{ $t("Project.Box1.symbol") }}
                 </li>
                 <li>
-                  <span>{{ $t("Project.Box1.li2") }}</span
-                  >{{ $t("Project.Box1.cnFull") }}
+                  <span>{{ $t("Project.Box1.li2") }}</span>{{ $t("Project.Box1.cnFull") }}
                 </li>
                 <li>
-                  <span>{{ $t("Project.Box1.li3") }}</span
-                  >{{ $t("Project.Box1.enFull") }}
+                  <span>{{ $t("Project.Box1.li3") }}</span>{{ $t("Project.Box1.enFull") }}
                 </li>
                 <li>
-                  <span>{{ $t("Project.Box1.li4") }}</span
-                  >{{ $t("Project.Box1.supply") }}
+                  <span>{{ $t("Project.Box1.li4") }}</span>{{ $t("Project.Box1.supply") }}
                 </li>
               </ul>
             </div>
@@ -185,7 +175,10 @@
             <h1>{{ $t("Project.Box3.title_right") }}</h1>
             <div class="item">
               {{ $t("Project.Box3.coming") }}
-              <div class="btn">{{ $t("Project.Box3.btn") }}</div>
+              <div class="btn" @click="downloadPDF" :class="{ 'loading': isLoading }">
+                <span v-if="!isLoading">{{ $t("Project.Box3.btn") }}</span>
+                <span v-else class="loading-spinner"></span>
+              </div>
               <div class="image">
                 <img src="@/assets/new/page2@2x.png" alt="" />
               </div>
@@ -206,7 +199,47 @@
     </div>
   </section>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      isLoading: false
+    }
+  },
+  methods: {
+    downloadPDF() {
+      try {
+        // 设置加载状态
+        this.isLoading = true;
+        
+        // 创建一个 a 标签用于下载
+        const link = document.createElement('a');
+        // 设置 PDF 文件的正确路径（直接放在public目录下）
+        link.href = '/WebX全球链商白皮书-简.pdf';
+        // 设置下载的文件名
+        link.download = 'WebX全球链商白皮书-简.pdf';
+        // 设置target为_blank以避免某些浏览器的限制
+        link.target = '_blank';
+        // 设置rel属性以提高安全性
+        link.rel = 'noopener noreferrer';
+        // 触发点击事件
+        link.click();
+        
+        // 延迟关闭加载状态，确保用户能看到加载动画
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 1000);
+      } catch (error) {
+        console.error('下载失败:', error);
+        // 可以添加错误提示给用户
+        alert('下载失败，请稍后重试。');
+        // 确保错误时也关闭加载状态
+        this.isLoading = false;
+      }
+    }
+  }
+}
+</script>
 <style scoped lang="scss">
 .Project {
   margin: 57px auto 121px;
@@ -223,6 +256,7 @@
   .box_item1 {
     background: #e5f6fe;
     border-radius: 20px;
+
     .box_item1_c {
       display: flex;
       justify-content: space-between;
@@ -231,9 +265,11 @@
       gap: 80px;
       padding: 0 36px 0;
     }
+
     .top {
       padding: 36px 36px 1px;
     }
+
     h1 {
       font-weight: bold;
       font-size: 36px;
@@ -319,7 +355,7 @@
           height: 33px;
         }
 
-        > div {
+        >div {
           display: flex;
           gap: 6px;
           align-items: center;
@@ -421,6 +457,25 @@
         color: #ffffff;
         text-align: center;
         margin-top: 56px;
+        cursor: pointer;
+        &.loading {
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
+  
+  .loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
       }
 
       .image {
@@ -474,20 +529,25 @@
 @media (max-width: 1024px) {
   .Project {
     padding: 0 20px;
+
     .box_item1 {
       display: block;
+
       .box_item1_c {
         display: block;
         padding: 0 30px;
         gap: 0;
       }
     }
+
     .box_item2 {
       display: block;
       margin: 19px 0;
+
       .left,
       .right {
-        width: auto; /* 或者 100%，看你布局需要 */
+        width: auto;
+        /* 或者 100%，看你布局需要 */
         height: auto;
         background: #e5f6fe;
         border-radius: 20px;
@@ -495,11 +555,14 @@
         margin: 20px 0;
       }
     }
+
     .box_item3 {
       display: block;
+
       .left,
       .right {
-        width: auto; /* 或者 100%，看你布局需要 */
+        width: auto;
+        /* 或者 100%，看你布局需要 */
         height: auto;
         background: #e5f6fe;
         border-radius: 20px;
@@ -509,17 +572,20 @@
     }
   }
 }
+
 // 小尺寸pc端
 @media (max-width: 1440px) and (min-width: 1025px) {
   .container {
     padding: 40px 54px;
   }
+
   .Project .box_item1 .right {
     padding: 14px 5px 0;
   }
 }
 
 @media screen and (max-width: 768px) {
+
   // 添加盒模型统一设置
   .Project {
     box-sizing: border-box;
@@ -554,6 +620,7 @@
       .box_item1_c {
         display: block;
       }
+
       h1 {
         font-size: 24px;
       }
@@ -565,6 +632,7 @@
         max-width: 500px;
         overflow-wrap: break-word;
       }
+
       .left {
         width: 100%;
 
@@ -607,7 +675,7 @@
         .info {
           width: 100%;
 
-          > div {
+          >div {
             flex-wrap: wrap;
           }
         }
@@ -678,6 +746,7 @@
       // flex-direction: column;
       // gap: 15px;
       display: block;
+
       .box {
         width: auto !important;
         max-width: none;

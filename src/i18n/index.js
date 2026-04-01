@@ -132,7 +132,7 @@ const messages = {
         title_right: "Whitepaper Download",
         coming:
           "The whitepaper is being finalized and reviewed; a link will be provided once the official version is released",
-        btn: "Coming Soon",
+        btn: "Download now",
       },
 
       Box4: {
@@ -579,7 +579,7 @@ const messages = {
         title_right: "白皮書下載",
         coming:
           "白皮書正在整理與審閱，暫提供白皮書連結，正式版本發布後可直接下載",
-        btn: "即將推出",
+        btn: "立即下載",
       },
 
       Box4: {
