@@ -8,20 +8,26 @@
           <div class="top">
             <h1>{{ $t("Project.Box1.h1_1") }}</h1>
             <h3>
-              <strong>{{ $t("Project.Box1.h3_1") }}</strong>{{ $t("Project.Box1.h3_1_s")
-              }}<strong>{{ $t("Project.Box1.h3_1_s_2") }}</strong>{{ $t("Project.Box1.h3_1_3")
+              <strong>{{ $t("Project.Box1.h3_1") }}</strong
+              >{{ $t("Project.Box1.h3_1_s")
+              }}<strong>{{ $t("Project.Box1.h3_1_s_2") }}</strong
+              >{{ $t("Project.Box1.h3_1_3")
               }}<strong>{{ $t("Project.Box1.h3_1_s_3") }}</strong>
             </h3>
             <h3>
-              <strong>{{ $t("Project.Box1.h3_2") }}</strong>{{ $t("Project.Box1.h3_2_s")
-              }}<strong>{{ $t("Project.Box1.h3_2_s_2") }}</strong>{{ $t("Project.Box1.h3_2_s_3")
-              }}<strong>{{ $t("Project.Box1.h3_2_s_4") }}</strong>{{ $t("Project.Box1.h3_2_s_5")
+              <strong>{{ $t("Project.Box1.h3_2") }}</strong
+              >{{ $t("Project.Box1.h3_2_s")
+              }}<strong>{{ $t("Project.Box1.h3_2_s_2") }}</strong
+              >{{ $t("Project.Box1.h3_2_s_3")
+              }}<strong>{{ $t("Project.Box1.h3_2_s_4") }}</strong
+              >{{ $t("Project.Box1.h3_2_s_5")
               }}<strong>{{ $t("Project.Box1.h3_2_s_6") }}</strong>
               {{ $t("Project.Box1.h3_2_s_7") }}
             </h3>
 
             <h3>
-              <strong>{{ $t("Project.Box1.h3_3") }}</strong>{{ $t("Project.Box1.h3_3_1") }}
+              <strong>{{ $t("Project.Box1.h3_3") }}</strong
+              >{{ $t("Project.Box1.h3_3_1") }}
             </h3>
             <h3>{{ $t("Project.Box1.h3_4") }}</h3>
           </div>
@@ -30,16 +36,20 @@
               <h1>{{ $t("Project.Box1.h1_2") }}</h1>
               <ul>
                 <li>
-                  <span>{{ $t("Project.Box1.li1") }}</span>{{ $t("Project.Box1.symbol") }}
+                  <span>{{ $t("Project.Box1.li1") }}</span
+                  >{{ $t("Project.Box1.symbol") }}
                 </li>
                 <li>
-                  <span>{{ $t("Project.Box1.li2") }}</span>{{ $t("Project.Box1.cnFull") }}
+                  <span>{{ $t("Project.Box1.li2") }}</span
+                  >{{ $t("Project.Box1.cnFull") }}
                 </li>
                 <li>
-                  <span>{{ $t("Project.Box1.li3") }}</span>{{ $t("Project.Box1.enFull") }}
+                  <span>{{ $t("Project.Box1.li3") }}</span
+                  >{{ $t("Project.Box1.enFull") }}
                 </li>
                 <li>
-                  <span>{{ $t("Project.Box1.li4") }}</span>{{ $t("Project.Box1.supply") }}
+                  <span>{{ $t("Project.Box1.li4") }}</span
+                  >{{ $t("Project.Box1.supply") }}
                 </li>
               </ul>
             </div>
@@ -175,7 +185,11 @@
             <h1>{{ $t("Project.Box3.title_right") }}</h1>
             <div class="item">
               {{ $t("Project.Box3.coming") }}
-              <div class="btn" @click="downloadPDF" :class="{ 'loading': isLoading }">
+              <div
+                class="btn"
+                @click="downloadPDF"
+                :class="{ loading: isLoading }"
+              >
                 <span v-if="!isLoading">{{ $t("Project.Box3.btn") }}</span>
                 <span v-else class="loading-spinner"></span>
               </div>
@@ -203,42 +217,42 @@
 export default {
   data() {
     return {
-      isLoading: false
-    }
+      isLoading: false,
+    };
   },
   methods: {
     downloadPDF() {
       try {
         // 设置加载状态
         this.isLoading = true;
-        
+
         // 创建一个 a 标签用于下载
-        const link = document.createElement('a');
+        const link = document.createElement("a");
         // 设置 PDF 文件的正确路径（直接放在public目录下）
-        link.href = '/WebX全球链商白皮书-简.pdf';
+        link.href = "/whitepaper.pdf";
         // 设置下载的文件名
-        link.download = 'WebX全球链商白皮书-简.pdf';
+        link.download = "whitepaper.pdf";
         // 设置target为_blank以避免某些浏览器的限制
-        link.target = '_blank';
+        link.target = "_blank";
         // 设置rel属性以提高安全性
-        link.rel = 'noopener noreferrer';
+        link.rel = "noopener noreferrer";
         // 触发点击事件
         link.click();
-        
+
         // 延迟关闭加载状态，确保用户能看到加载动画
         setTimeout(() => {
           this.isLoading = false;
         }, 1000);
       } catch (error) {
-        console.error('下载失败:', error);
+        console.error("下载失败:", error);
         // 可以添加错误提示给用户
-        alert('下载失败，请稍后重试。');
+        alert("下载失败，请稍后重试。");
         // 确保错误时也关闭加载状态
         this.isLoading = false;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
 .Project {
@@ -355,7 +369,7 @@ export default {
           height: 33px;
         }
 
-        >div {
+        > div {
           display: flex;
           gap: 6px;
           align-items: center;
@@ -459,23 +473,25 @@ export default {
         margin-top: 56px;
         cursor: pointer;
         &.loading {
-    cursor: not-allowed;
-    opacity: 0.8;
-  }
-  
-  .loading-spinner {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 1s ease-in-out infinite;
-  }
-  
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
+          cursor: not-allowed;
+          opacity: 0.8;
+        }
+
+        .loading-spinner {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          border-top-color: #fff;
+          animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
       }
 
       .image {
@@ -585,7 +601,6 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-
   // 添加盒模型统一设置
   .Project {
     box-sizing: border-box;
@@ -675,7 +690,7 @@ export default {
         .info {
           width: 100%;
 
-          >div {
+          > div {
             flex-wrap: wrap;
           }
         }
